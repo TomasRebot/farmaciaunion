@@ -21,7 +21,8 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/panel';
+    public const HOME = '/home';
+    public const PANEL = '/panel';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -87,8 +88,8 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapCoreRoutes()
     {
-        Route::prefix('core')
-            ->middleware('web')
+        Route::middleware(['web','auth', 'checkPermissions'])
+            ->prefix('core')
             ->namespace('App\Core\Controllers')
             ->group(base_path('routes/core.php'));
     }

@@ -40,6 +40,7 @@ mix.styles([
     'resources/panel/js/plugins/select2/select2.js',
     'resources/panel/js/plugins/switchery/switchery.js',
     'resources/panel/js/plugins/validate/jquery.validate.min.js',
+    'resources/panel/js/panel/miscellaneous.js',
     'resources/panel/js/panel/MtzValidator.js',
     'resources/panel/js/panel/product_form.js',
     'resources/panel/js/panel/drug_therapeutic_action.js',

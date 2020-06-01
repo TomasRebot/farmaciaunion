@@ -37,7 +37,7 @@ MtzValidations = (function ($) {
             case'maxlength':return  `El campo debe tener al menos ${keys[1]} digitos`;
             case'required':return  `El campo es requerido`;
             case'email':return  `El campo debe ser un email valido`;
-            case'url':return  `Ingrese una url valida, ejemplo: https://www.mestizosweb.com.ar`;
+            case'url':return  `Ingrese una url valida, ejemplo: https://www.farmaciaunion.com.ar`;
         }
     }
     const loadForm = function (form) {

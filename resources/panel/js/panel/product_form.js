@@ -9,19 +9,7 @@ $(document).ready(() => {
     const isEditting = ($('#id').val() !== undefined)
 
 
-    description.summernote({
-        height:150,
-        toolbar: [
-            ['style', ['style']],
-            ['font', ['bold', 'underline', 'clear']],
-            ['fontname', ['fontname']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['table', ['table']],
-            ['insert', ['link']],
-            ['view', ['fullscreen']],
-        ],
-    });
+    description.summernote(summernoteBaseMediumConfig);
     let params =(isEditting) ? { product: $('#id').val() } : {};
 
     axios.post(productSuportDataUrl, params).then((response) => {

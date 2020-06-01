@@ -53,9 +53,9 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row @if ($errors->has('presentacion')) has-error @endif">
-                                    <label class=" control-label " for="input-name"><b>Presentacion</b></label>
+                                    <label class=" control-label " for="name"><b>Presentacion</b></label>
                                     <div class="col-sm-9">
-                                        <input id="input-name" type="text" class="form-control"
+                                        <input id="name" type="text" class="form-control"
                                             value=""
                                             data-rule="presentation" data-restrictions="required"
                                             name="presentation">
@@ -121,9 +121,9 @@
                         <!-- selects-->
                         <div class="row mt-3">
                             <div class="col-md-4">
-                                <div class="input-group @if ($errors->has('drug_id')) has-error @endif">
-                                    <span class="input-group-addon border-0">
-                                        <label class=" control-label" for="input-name"><b>Droga</b> </label>
+                                <div class="group @if ($errors->has('drug_id')) has-error @endif">
+                                    <span class="group-addon border-0">
+                                        <label class=" control-label" for="name"><b>Droga</b> </label>
                                     </span>
                                     <select id="drug_select" class="form-control m-b" name="drug_id">
 
@@ -131,9 +131,9 @@
                                 </div>
                             </div>
                             <div class="col-md-4 ">
-                                <div class="input-group @if ($errors->has('therpeutic_action_id')) has-error @endif">
-                                    <span class="input-group-addon border-0">
-                                        <label class=" control-label" for="input-name"><b>Accion terapeutica</b> </label>
+                                <div class="group @if ($errors->has('therpeutic_action_id')) has-error @endif">
+                                    <span class="group-addon border-0">
+                                        <label class=" control-label" for="name"><b>Accion terapeutica</b> </label>
                                     </span>
                                     <select id="therapeutic_action_select" class="form-control m-b" name="primary_therapeutic_action_id">
 
@@ -141,9 +141,9 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="input-group @if ($errors->has('laboratory_id')) has-error @endif">
-                                        <span class="input-group-addon border-0">
-                                            <label class=" control-label" for="input-name"><b>Laboratorio</b> </label>
+                                <div class="group @if ($errors->has('laboratory_id')) has-error @endif">
+                                        <span class="group-addon border-0">
+                                            <label class=" control-label" for="name"><b>Laboratorio</b> </label>
                                         </span>
                                     <select id="laboratory_select" class="form-control m-b" name="laboratory_id">
 
@@ -151,8 +151,8 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="input-group @if ($errors->has('brand')) has-error @endif">
-                                    <span class="input-group-addon border-0">
+                                <div class="group @if ($errors->has('brand')) has-error @endif">
+                                    <span class="group-addon border-0">
                                         <label class=" control-label" for="brands_select"><b>Marca</b> </label>
                                     </span>
                                     <select id="brands_select" class="form-control m-b" name="brand_id">
@@ -162,8 +162,8 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="input-group @if ($errors->has('category_id')) has-error @endif">
-                                    <span class="input-group-addon border-0">
+                                <div class="group @if ($errors->has('category_id')) has-error @endif">
+                                    <span class="group-addon border-0">
                                         <label class=" control-label" for="category_select"><b>Categoría</b> </label>
                                     </span>
                                     <select id="category_select" class="form-control m-b" name="category_id"></select>
@@ -171,8 +171,8 @@
                             </div>
 
                             <div class="col-md-4">
-                                <div class="input-group @if ($errors->has('provider_id')) has-error @endif">
-                                    <span class="input-group-addon border-0">
+                                <div class="group @if ($errors->has('provider_id')) has-error @endif">
+                                    <span class="group-addon border-0">
                                         <label class=" control-label" for="provider_select"><b>Proveedor</b> </label>
                                     </span>
                                     <select id="provider_select" class="form-control m-b" name="provider_id"></select>
@@ -183,9 +183,9 @@
                         <div class="row mt-5">
                             <div class="col-md-12">
                                 <div class="form-group row @if ($errors->has('description')) has-error @endif">
-                                    <label class="control-label col-sm-2 mb-3" for="input-name"><b>Descripcion</b></label>
+                                    <label class="control-label col-sm-2 mb-3" for="description"><b>Descripcion</b></label>
                                     <div class="col-sm-8">
-                                        <textarea id="input-description"
+                                        <textarea id="description"
                                               data-rule="description" data-restrictions="required"
                                               type="text" class="form-control"name="description">
                                         </textarea>
@@ -196,8 +196,8 @@
                         <!-- selects-->
                         <div class="row">
                             <div class="col-md-6 mt-4 mb-4">
-                                <div class="input-group">
-                                    <span class="input-group-addon border-0">
+                                <div class="group">
+                                    <span class="group-addon border-0">
                                         <label class=" control-label"><b>Estado</b></label>
                                     </span>
                                     <div class="col-md-3 ">
