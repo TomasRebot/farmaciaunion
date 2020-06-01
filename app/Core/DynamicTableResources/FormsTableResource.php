@@ -10,6 +10,8 @@ class FormsTableResource
 
     public function getResource(){
         return [
+            'page_name' => 'Formularios',
+
             'resource' => 'Form',
             'resolver' => 'FormResolver',
 

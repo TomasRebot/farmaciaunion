@@ -17,8 +17,8 @@ class UserTableSeeder extends Seeder
         $roleSuperAdmin = Role::where('name', 'Super usuario')->first()->id;
         $idsuperadmin = DB::table('users')->insertGetId([
             'name' => 'Super usuario',
-            'email' => 'info@mestizosweb.com',
-            'password' => bcrypt('orono353'),
+            'email' => 'super@super.com',
+            'password' => bcrypt('123456'),
         ]);
         DB::table('user_roles')->insert([
             'user_id' => $idsuperadmin,
@@ -28,12 +28,24 @@ class UserTableSeeder extends Seeder
         $roleAdmin = Role::where('name', 'Administrador')->first()->id;
         $idAdmin = DB::table('users')->insertGetId([
             'name' => 'Administrador',
-            'email' => 'admin@mestizosweb.com',
-            'password' => bcrypt('orono353'),
+            'email' => 'admin@farmaciaunion.com',
+            'password' => bcrypt('123456'),
         ]);
         DB::table('user_roles')->insert([
             'user_id' => $idAdmin,
             'role_id' => $roleAdmin,
         ]);
+
+        for($i = 2; $i < 20; $i++){
+            $idAdmin = DB::table('users')->insertGetId([
+                'name' => 'Administrador'.$i,
+                'email' => 'admin'.$i.'@farmaciaunion.com',
+                'password' => bcrypt('123456'),
+            ]);
+            DB::table('user_roles')->insert([
+                'user_id' => $idAdmin,
+                'role_id' => $roleAdmin,
+            ]);
+        }
     }
 }

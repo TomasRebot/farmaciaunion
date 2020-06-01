@@ -22,12 +22,7 @@ class UsersController extends BaseController implements ControllerContract
     {
         $this->resource = $resource;
     }
-    public function index()
-    {
 
-        $apiResource = $this->resource->getResource();
-        return view('panel.admin.users.index', compact('apiResource'));
-    }
 
     public function edit(User $user)
     {

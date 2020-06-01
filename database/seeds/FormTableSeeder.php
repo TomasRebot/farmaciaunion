@@ -19,7 +19,7 @@ class FormTableSeeder extends Seeder
                 'name' => 'Usuarios',
                 'key' => 'usersForm',
                 'target' => 'panel/users',
-                'icon' => '',
+                'icon' =>'',
                 'order' => '0'
             ],
             [
@@ -27,7 +27,7 @@ class FormTableSeeder extends Seeder
                 'name' => 'Roles',
                 'key' => 'rolesForm',
                 'target' => 'panel/roles',
-                'icon' => '',
+                'icon' =>'',
                 'order' => '1'
             ],
             [
@@ -35,7 +35,7 @@ class FormTableSeeder extends Seeder
                 'name' => 'Permisos',
                 'key' => 'permissionsForm',
                 'target' => 'panel/permissions',
-                'icon' => '',
+                'icon' =>'',
                 'order' => '2'
             ],
             [
@@ -43,7 +43,7 @@ class FormTableSeeder extends Seeder
                 'name' => 'Modulos',
                 'key' => 'modulesForm',
                 'target' => 'panel/modules',
-                'icon' => '',
+                'icon' =>'',
                 'order' => '3'
             ],
             [
@@ -51,7 +51,7 @@ class FormTableSeeder extends Seeder
                 'name' => 'Formularios',
                 'key' => 'formsForm',
                 'target' => 'panel/forms',
-                'icon' => '',
+                'icon' =>'',
                 'order' => '4'
             ],
             [
@@ -59,7 +59,7 @@ class FormTableSeeder extends Seeder
                 'name' => 'Global',
                 'key' => 'siteConfigForm',
                 'target' => 'panel/global-config',
-                'icon' => '',
+                'icon' =>'',
                 'order' => '5'
             ]
         ];
@@ -69,7 +69,7 @@ class FormTableSeeder extends Seeder
                 'name' => 'Activos',
                 'key' => 'activeClients',
                 'target' => 'panel/clients',
-                'icon' => '',
+                'icon' =>'',
                 'state' => '1',
             ],
             [
@@ -77,11 +77,76 @@ class FormTableSeeder extends Seeder
                 'name' => 'Inactivos',
                 'key' => 'unactiveClients',
                 'target' => 'panel/unactive-clients',
-                'icon' => '',
+                'icon' =>'',
+                'state' => '1',
+            ],
+        ];
+        $pharmacy_module_forms = [
+            [
+                'module_id' => 3,
+                'name' => 'Drogas',
+                'key' => 'drugsForm',
+                'target' => 'panel/drugs',
+                'icon' =>'',
+                'state' => '1',
+            ],
+            [
+                'module_id' => 3,
+                'name' => 'Laboratorios',
+                'key' => 'laboratoriesForm',
+                'target' => 'panel/laboratories',
+                'icon' =>'',
+                'state' => '1',
+            ],
+            [
+                'module_id' => 3,
+                'name' => 'Acciones terapeuticas',
+                'key' => 'therapeuticActionForm',
+                'target' => 'panel/therapeutic-actions',
+                'icon' =>'',
+                'state' => '1',
+            ],
+        ];
+        $store_module_forms = [
+            [
+                'module_id' => 4,
+                'name' => 'Marcas',
+                'key' => 'brandsForm',
+                'target' => 'panel/brands',
+                'icon' =>'',
+                'state' => '1'
+            ],
+            [
+                'module_id' => 4,
+                'name' => 'Categorias',
+                'key' => 'categoriesForm',
+                'target' => 'panel/categories',
+                'icon' =>'',
+                'state' => '1',
+            ],
+            [
+                'module_id' => 4,
+                'name' => 'Proveedores',
+                'key' => 'providersForm',
+                'target' => 'panel/providers',
+                'icon' =>'',
+                'state' => '1'
+            ],
+            [
+                'module_id' => 4,
+                'name' => 'Productos',
+                'key' => 'productForm',
+                'target' => 'panel/products',
+                'icon' =>'',
                 'state' => '1',
             ],
         ];
 
-        DB::table('forms')->insert(array_merge($config_module_forms,$client_module_forms));
+        DB::table('forms')->insert(array_merge(
+            $config_module_forms,
+            $client_module_forms,
+            $pharmacy_module_forms,
+            $store_module_forms
+        ));
     }
 }

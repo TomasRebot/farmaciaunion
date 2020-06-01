@@ -30,6 +30,8 @@ class MigrationServiceProvider extends ServiceProvider
             $mainPath . '/roles',
             $mainPath . '/menu',
             $mainPath . '/empresa',
+            $mainPath . '/pharmacy',
+            $mainPath . '/store',
         ];
         $paths = array_merge([$mainPath], $directories);
 

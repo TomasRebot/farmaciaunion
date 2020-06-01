@@ -15,7 +15,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::post('/update-product','MerlinInterfaceController@updateProduct')->name('api.update.product');
+Route::get('/fire-initial-load','MerlinInterfaceController@fireInitialLoad')->name('api.fire.intial.load');
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/get-categories','ApiRouterController@categories')->name('api.get.categories');
+Route::post('/get-drugs','ApiRouterController@drugs')->name('api.get.drugs');
+Route::post('/get-therapeutic-actions','ApiRouterController@therapeuticActions')->name('api.get.therapeutic.actions');
+Route::post('/get-product-support-data','ApiRouterController@productSupportData')->name('api.get.product.support.data');
+
+
+Route::post('/store-drugs','ApiRouterController@storeTherapeuticAction')->name('api.therapeutic.actions.store');
+
+
+
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
