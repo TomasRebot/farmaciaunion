@@ -7,7 +7,6 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{{ GlobalConfig::bussinesName()}}</title>
         <link href="{{ asset('css/panel.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/plugins/iCheck/custom.css') }}" rel="stylesheet">
         <script src="{{ asset('js/panel.js') }}"></script>
         @yield('custom-styles')
     </head>
