@@ -9,6 +9,8 @@ class PermissionTableResource
 
     public function getResource(){
         return [
+            'page_name' => 'Permisos',
+
             'resource' => 'Permission',
             'resolver' => 'PermissionResolver',
 

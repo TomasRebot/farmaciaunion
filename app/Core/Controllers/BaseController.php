@@ -9,4 +9,9 @@ abstract class BaseController extends Controller
 {
     use DeleteHandlerTrait;
 
+    public function index()
+    {
+        $apiResource = $this->resource->getResource();
+        return view('panel.partials.dynamictable', compact('apiResource'));
+    }
 }

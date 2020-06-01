@@ -13,22 +13,22 @@ class GlobalConfigTableSeeder extends Seeder
     public function run()
     {
         DB::table('global_configs')->insert([
-            'bussines_name' => 'Mestizos comunicacion',
-            'bussines_description'=> 'Agencia de publicidad de rosario',
+            'bussines_name' => 'Farmacia union',
+            'bussines_description'=> 'Farmacia ',
             'bussiness_schedule'=> '{ "morningOpen": "8am","morningClose":"13pm","afternoonOpen":"17pm","afternoonClose":"22pm","full":"false" }',
-            'whatsapp_phone'=> '+54 9 341 514-3422',
+            'whatsapp_phone'=> '+54 9 3454199555',
             'pixel_facebook'=> 'https://www.google.com.ar',
             'google_analitycs'=> 'https://www.google.com.ar',
-            'facebook_link'=> 'https://www.facebook.com/mestizosfan/',
-            'instagram_link'=> 'https://www.instagram.com/mestizosgram/',
-            'twitter_link'=> 'Mestizos comunicacion',
-            'youtube_link'=> 'https://www.youtube.com.ar',
-            'linkedin_link'=> 'https://www.linkedin.com.ar',
-            'data_fiscal_link'=> 'https://www.google.com.ar',
-            'login_logo'=> 'mestizos_login.png',
-            'email_sender'=> 'mtz-app@mestizosweb.com.ar',
-            'email_reciver'=> 'info@mestizosweb.com.ar',
-            'email_suport'=> 'soporte@mestizosweb.com.ar',
+            'facebook_link'=> 'https://www.facebook.com/FarmaciaUnionConcordia/',
+            'instagram_link'=> '-',
+            'twitter_link'=> '-',
+            'youtube_link'=> '-',
+            'linkedin_link'=> '-',
+            'data_fiscal_link'=> '-',
+            'login_logo'=> 'union_login.jpg',
+            'email_sender'=> 'info@farmaciaunion.com.ar',
+            'email_reciver'=> 'info@farmaciaunion.com.ar',
+            'email_suport'=> 'tomasrebot@farmaciaunion.com.ar',
 
 
         ]);

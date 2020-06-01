@@ -56,16 +56,16 @@ class User extends BaseEntity implements Authenticatable
      * @param $password
      * @return Void
      */
-    public function setPasswordAttribute($password){
-
-        if (!empty($password) && Hash::needsRehash($password))
-        {
-            $this->attributes['password'] = Hash::make($password);
-        }else{
-
-            $this->attributes['password'] = $this->$password;
-        }
-    }
+//    public function setPasswordAttribute($password){
+//
+//        if (!empty($password) && Hash::needsRehash($password))
+//        {
+//            $this->attributes['password'] = Hash::make($password);
+//        }else{
+//
+//            $this->attributes['password'] = $this->$password;
+//        }
+//    }
 
     public function roles()
     {

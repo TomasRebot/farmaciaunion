@@ -27,6 +27,20 @@ class ModuleTableSeeder extends Seeder
                 'icon' => 'fa fa-user',
                 'order' => '1'
             ],
+            [
+                'name' => 'Farmacia',
+                'description' => 'Modulo de farmacia',
+                'internal_handler' => 'pharmacy_handler',
+                'icon' => 'fa fa-cubes',
+                'order' => '1'
+            ],
+            [
+                'name' => 'Tienda',
+                'description' => 'Modulo de tienda',
+                'internal_handler' => 'store_handler',
+                'icon' => 'fa fa-shopping-cart',
+                'order' => '1'
+            ],
         ];
         DB::table('modules')->insert($modules);
     }

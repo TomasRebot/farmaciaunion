@@ -21,7 +21,8 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/panel';
+    public const HOME = '/home';
+    public const PANEL = '/panel';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -81,21 +82,21 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::prefix('api')
             ->middleware('api')
-            ->namespace($this->namespace)
+            ->namespace('App\Api\Controllers')
             ->group(base_path('routes/api.php'));
     }
 
     protected function mapCoreRoutes()
     {
-        Route::prefix('core')
-            ->middleware('web')
+        Route::middleware(['web','auth', 'checkPermissions'])
+            ->prefix('core')
             ->namespace('App\Core\Controllers')
             ->group(base_path('routes/core.php'));
     }
 
     protected function mapPanelRoutes()
     {
-        Route::middleware('web')
+        Route::middleware(['web','auth', 'checkPermissions'])
             ->prefix('panel')
             ->namespace('App\Http\Controllers\Panel')
             ->group(base_path('routes/panel.php'));

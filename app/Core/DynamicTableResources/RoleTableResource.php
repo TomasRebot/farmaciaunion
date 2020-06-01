@@ -8,6 +8,8 @@ class RoleTableResource
 
     public function getResource(){
         return [
+            'page_name' => 'Roles',
+
             'resource' => 'Role',
             'resolver' => 'RoleResolver',
 

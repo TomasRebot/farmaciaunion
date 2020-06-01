@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers\Panel\Admin;
 
+use App\Core\Controllers\BaseController;
 use App\Core\DynamicTableResources\PermissionTableResource;
+use App\Core\Interfaces\ControllerContract;
 use App\Entities\Permission;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
-class PermissionsController extends Controller
+class PermissionsController  extends BaseController implements ControllerContract
 {
     /**
      * Display a listing of the resource.
@@ -23,11 +25,7 @@ class PermissionsController extends Controller
     {
         $this->resource = $resource;
     }
-    public function index()
-    {
-        $apiResource = $this->resource->getResource();
-        return view('panel.admin.permissions.index', compact('apiResource'));
-    }
+
 
     /**
      * Show the form for creating a new resource.

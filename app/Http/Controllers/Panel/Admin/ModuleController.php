@@ -17,11 +17,7 @@ class ModuleController extends BaseController implements ControllerContract
     {
         $this->resource = $resource;
     }
-    public function index()
-    {
-        $apiResource = $this->resource->getResource();
-        return view('panel.admin.modules.index', compact('apiResource'));
-    }
+
 
     /**
      * Show the form for creating a new resource.

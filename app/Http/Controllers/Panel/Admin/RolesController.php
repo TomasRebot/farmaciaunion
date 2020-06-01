@@ -29,13 +29,7 @@ class RolesController extends BaseController implements ControllerContract
         $this->resource = $resource;
     }
 
-    public function index()
-    {
 
-        $roles = Role::all();
-        $apiResource = $this->resource->getResource();
-        return view('panel.admin.roles.index', compact('apiResource'));
-    }
 
     /**
      * Show the form for creating a new resource.

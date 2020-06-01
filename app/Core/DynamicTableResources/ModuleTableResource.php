@@ -10,6 +10,8 @@ class ModuleTableResource
 
     public function getResource(){
         return [
+            'page_name' => 'Modulos',
+
             'resource' => 'Module',
             'resolver' => 'ModuleResolver',
 

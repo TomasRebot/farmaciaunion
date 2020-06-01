@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use App\Entities\Form;
 use App\Entities\Permission;
 use App\Entities\RolePermissionsForms;
+use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,8 +34,7 @@ class CheckPermissions
 
 
         if( ! Auth::check() || ! Auth::user()->hasAccessToPanel()){
-            return redirect('/');
-        }
+            return redirect(RouteServiceProvider::HOME);        }
 
 
         return $next($request);

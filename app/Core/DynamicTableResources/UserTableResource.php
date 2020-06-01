@@ -8,6 +8,8 @@ class UserTableResource
 
     public function getResource(){
         return [
+            'page_name' => 'Usuarios panel',
+
             'resource' => 'User',
             'resolver' => 'UserResolver',
 
@@ -42,7 +44,10 @@ class UserTableResource
         if(isset($request->columnFilters) && count($request->columnFilters)){
             foreach($request->columnFilters as $key =>  $filter){
                 switch ($filter){
-                    case'role': break;
+                    case'role_list':
+                        $query = $query->whereState('1')
+                            ->whereHas('roles', function($role)use($filter){ $role->where('name', 'LIKE', $filter); });
+                    break;
                     default:
                         $query = $query->orWhere($filter, 'LIKE', '%'.$request->search_query.'%')
                             ->whereState('1')

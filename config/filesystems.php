@@ -54,6 +54,12 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+        'merlin_interface' => [
+            'driver' => 'local',
+            'root' => storage_path('merlin_interface'),
+            'url' => storage_path('merlin_interface'),
+            'visibility' => 'private',
+        ],
 
         's3' => [
             'driver' => 's3',

@@ -40,6 +40,12 @@ return [
             'channels' => ['single'],
             'ignore_exceptions' => false,
         ],
+        'merlin_logs' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/merlin.log'),
+            'level' => 'debug',
+            'days' => 14,
+        ],
 
         'single' => [
             'driver' => 'single',
@@ -99,6 +105,7 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+
     ],
 
 ];

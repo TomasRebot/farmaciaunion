@@ -17,7 +17,7 @@ class ClientSeeder extends Seeder
     {
 
 
-        factory(User::class, 500)->create();
+        factory(User::class, 50)->create();
 
         $roleClient = Role::where('name', 'Cliente')->first()->id;
         $already_have_role = UserRole::select('user_id')->get()->toArray();

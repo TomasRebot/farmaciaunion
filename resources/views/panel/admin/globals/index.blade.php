@@ -33,9 +33,9 @@
                             </div>
                         </div>
                         <div class="form-group row  @error('bussines_description') has-error @enderror">
-                            <label class="col-sm-2 control-label" for="bussines_description">Descripción <span class="oblig">*</span></label>
+                            <label class="col-sm-2 control-label" for="bussines_description_global_config">Descripción <span class="oblig">*</span></label>
                             <div class="col-sm-8">
-                                <textarea id="bussines_description" type="text" class="form-control"
+                                <textarea id="bussines_description_global_config" type="text" class="form-control"
                                        name="bussines_description"
                                        data-rule="bussines_description" data-restrictions="required">
                                     {{$globalConfig->bussines_description}}
@@ -63,12 +63,13 @@
                         </div>
 
                         <div class="form-group row  @error('schedule_time') has-error @enderror">
-                            <label class="col-sm-2 control-label" for="schedule_time">Horarios</label>
+                            <label class="col-sm-2 control-label" for="schedule_time_global_config">Horarios</label>
                             <div class="col-sm-8">
-                                <input id="schedule_time" type="text" class="form-control"
-                                       value="{{$globalConfig->schedule_time}}"
-                                       name="schedule_time"
-                                       data-rule="schedule_time" data-restrictions="required">
+                                <textarea id="schedule_time_global_config" type="text" class="form-control"
+                                          name="schedule_time"
+                                          data-rule="schedule_time" data-restrictions="required">
+                                    {{$globalConfig->schedule_time}}
+                                </textarea>
                                 @error ('schedule_time')
                                 <span class="control-label">
                                         <p>{{ $messages }}</p>
@@ -111,9 +112,9 @@
                             </div>
                         </div>
                         <div class="form-group row  @error('google_analitycs') has-error @enderror">
-                            <label class="col-sm-2 control-label" for="google_analitycs">Google Analytics</label>
+                            <label class="col-sm-2 control-label" for="google_analitycs_global_config">Google Analytics</label>
                             <div class="col-sm-8">
-                                <textarea id="google_analitycs" type="text" class="form-control"
+                                <textarea id="google_analitycs_global_config" type="text" class="form-control"
                                        name="google_analitycs"
                                        data-rule="google_analitycs" data-restrictions="required">
                                     {{$globalConfig->google_analitycs}}
