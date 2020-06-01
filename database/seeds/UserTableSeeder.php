@@ -36,16 +36,5 @@ class UserTableSeeder extends Seeder
             'role_id' => $roleAdmin,
         ]);
 
-        for($i = 2; $i < 20; $i++){
-            $idAdmin = DB::table('users')->insertGetId([
-                'name' => 'Administrador'.$i,
-                'email' => 'admin'.$i.'@farmaciaunion.com',
-                'password' => bcrypt('123456'),
-            ]);
-            DB::table('user_roles')->insert([
-                'user_id' => $idAdmin,
-                'role_id' => $roleAdmin,
-            ]);
-        }
     }
 }

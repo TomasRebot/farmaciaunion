@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', function () {
-    return view('site.home');
+    return redirect()->to('login');
+
 })->name('site');
 
 
