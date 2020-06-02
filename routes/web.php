@@ -21,8 +21,8 @@ Route::get('/', function () {
 
 
 
-Route::namespace('panel')->group(function () {
-    Route::get('/panel', 'HomeController@index')->name('home');
+Route::namespace('Panel')->group(function () {
+    Route::get('/panel', 'HomeController@index')->name('panel');
 });
 
 
