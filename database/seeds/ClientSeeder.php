@@ -18,7 +18,6 @@ class ClientSeeder extends Seeder
 
 
         factory(User::class, 10)->create();
-
         $roleClient = Role::where('name', 'Cliente')->first()->id;
         $already_have_role = UserRole::select('user_id')->get()->toArray();
         $users_whitout_role = User::whereNotIn('id', $already_have_role)->select('id')->get()->toArray();
