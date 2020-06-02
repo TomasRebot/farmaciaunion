@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>{{GlobalConfig::bussinesName()}}</title>
+        <link rel="icon" type="image/vnd.microsoft.icon" href="{{GlobalConfig::favicon()}}">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">

@@ -30,9 +30,14 @@ class GlobalConfig extends BaseEntity
         'email_suport',
     ];
 
+
     public function loginImage()
     {
         return asset('images/configs/'.$this->login_logo);
+    }
+    public function favicon()
+    {
+        return asset('images/configs/favicon_union.ico');
     }
     public function bussinesName()
     {
