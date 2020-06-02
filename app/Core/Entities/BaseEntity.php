@@ -12,7 +12,7 @@ abstract class BaseEntity extends Model
 {
     use UserExtensions;
 
-    protected $onSoftDelete = 'toggleState';
+    public $onSoftDelete = 'toggleState';
 
     public function scopeActives()
     {

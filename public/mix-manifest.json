@@ -1,5 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
+    "/js/pages/drug_therapeutic_actions.js": "/js/pages/drug_therapeutic_actions.js",
+    "/js/pages/products.js": "/js/pages/products.js",
     "/css/panel.css": "/css/panel.css",
     "/js/panel.js": "/js/panel.js"
 }

@@ -8,12 +8,40 @@ $(document).ready(() => {
     const therapeuticActionSelect  = $('#therapeutic_action_select');
     const isEditting = ($('#id').val() !== undefined)
 
-
+    const ajaxLoader = $('#product_ajax_select_loading');
+    const productSelects = $('#product_ajax_select_container');
     description.summernote(summernoteBaseMediumConfig);
     let params =(isEditting) ? { product: $('#id').val() } : {};
 
+
+
+
+
+    drugSelect.select2();
+    providerSelect.select2();
+    therapeuticActionSelect.select2();
+    brandsSelect.select2();
+    laboratorySelect.select2();
+    categorySelect.select2();
     axios.post(productSuportDataUrl, params).then((response) => {
         const data = response.data;
+        productSelects.removeClass('opacity-0');
+        ajaxLoader.addClass('hidden');
+
+
+        drugSelect.trigger({
+            type: 'select2:select',
+            params: {
+                data: data.drugs.map((drug) =>{
+                    const obj =  {
+                        "id": drug.id,
+                        "value": drug.id,
+                        "text": drug.name,
+                    }
+                    return obj;
+                })
+            }
+        });
         drugSelect.select2({
             data: data.drugs.map((drug) =>{
                 const obj =  {
@@ -25,51 +53,51 @@ $(document).ready(() => {
             }),
         });
         providerSelect.select2({
-            data: data.providers.map((provider) =>{
+            data: data.providers.map((item) =>{
                 const obj =  {
-                    "id": provider.id,
-                    "value": provider.id,
-                    "text": provider.name,
+                    "id": item.id,
+                    "value": item.id,
+                    "text": item.name,
                 }
                 return obj;
             }),
         });
         therapeuticActionSelect.select2({
-            data: data.therapeutic_actions.map((therapeutic_action) =>{
+            data: data.therapeutic_actions.map((item) =>{
                 const obj =  {
-                    "id": therapeutic_action.id,
-                    "value": therapeutic_action.id,
-                    "text": therapeutic_action.name,
+                    "id": item.id,
+                    "value": item.id,
+                    "text": item.name,
                 }
                 return obj;
             }),
         });
         brandsSelect.select2({
-            data: data.brands.map((brand) =>{
+            data: data.brands.map((item) =>{
                 const obj =  {
-                    "id": brand.id,
-                    "value": brand.id,
-                    "text": brand.name,
+                    "id": item.id,
+                    "value": item.id,
+                    "text": item.name,
                 }
                 return obj;
             }),
-        });;
+        });
         laboratorySelect.select2({
-            data: data.laboratories.map((laboratorie) =>{
+            data: data.laboratories.map((item) =>{
                 const obj =  {
-                    "id": laboratorie.id,
-                    "value": laboratorie.id,
-                    "text": laboratorie.name,
+                    "id": item.id,
+                    "value": item.id,
+                    "text": item.name,
                 }
                 return obj;
             }),
         });
         categorySelect.select2({
-            data: data.categories.map((category) =>{
+            data: data.categories.map((item) =>{
                 const obj =  {
-                    "id": category.id,
-                    "value": category.id,
-                    "text": category.name,
+                    "id": item.id,
+                    "value": item.id,
+                    "text": item.name,
                 }
                 return obj;
             }),

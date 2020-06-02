@@ -93,4 +93,7 @@
         </div>
     </div>
 @endsection
+@section('custom-scripts')
+    <script src="{{asset('js/pages/drug_therapeutic_actions.js')}}"></script>
+@endsection
 

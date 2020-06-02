@@ -20,14 +20,14 @@ class ProductTableResource
 
             'deleteUrl' => route('bulk-delete'),
             'deleteLabel' => 'Eliminar',
-            'deleteModalQuestion' => '¿Esta seguro que desea eliminar este laboratorio?',
+            'deleteModalQuestion' => '¿Esta seguro que desea eliminar este producto?',
 
             'restoreUrl' => route('bulk-delete'),
             'restoreLabel' => 'Restaurar',
-            'restoreModalQuestion' =>'¿ Esta seguro que desea restaurar este laboratorio?',
+            'restoreModalQuestion' =>'¿ Esta seguro que desea restaurar este producto?',
 
             'perPage' => 10,
-            'perPageLabel' => 'Laboratorios por página',
+            'perPageLabel' => 'Productos por página',
             'filters' => ['name','state', 'description'],
             'emptyTableLabel' => 'No se encontraron registros'
         ];

@@ -33,7 +33,6 @@ trait DeleteHandlerTrait
         $this->fails = new Collection();
         $this->request = $request;
         $this->entity = new $class();
-
         return $this->checkRequest();
     }
 

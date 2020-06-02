@@ -155,44 +155,6 @@ class FireInitialLoadJob implements ShouldQueue
             }
         }
 
-//        try{
-//            DB::beginTransaction();
-//            $p = $products->unique('merlin_id')->toArray();
-//            $c = $categories->unique('merlin_id')->toArray();
-//            $l = $laboratories->unique('merlin_id')->toArray();
-//            $d = $drugs_collection->unique('merlin_id')->toArray();
-//            $ta = $therapeutic_actions->unique('merlin_id')->toArray();
-//
-//            foreach (array_chunk($l,1000) as $lc)
-//            {
-//                DB::table('laboratories')->insert($lc);
-//            }
-//            foreach (array_chunk($d,1000) as $dc)
-//            {
-//                DB::table('drugs')->insert($dc);
-//            }
-//            foreach (array_chunk($ta,1000) as $tc)
-//            {
-//                DB::table('therapeutic_actions')->insert($tc);
-//            }
-//            foreach (array_chunk($c,1000) as $cc)
-//            {
-//                DB::table('categories')->insert($cc);
-//            }
-//            foreach (array_chunk($p,1000) as $pc)
-//            {
-//                DB::table('products')->insert($pc);
-//            }
-//
-//            DB::commit();
-//
-//        }catch (\Exception $e){
-//            dd($e);
-//
-//            DB::rollBack();
-//
-//        }
-
     }
     private function isValidEntity($entity){
         $value = $entity['merlin_id'];

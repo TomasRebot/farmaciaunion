@@ -47,9 +47,11 @@ mix.styles([
     'resources/panel/js/plugins/table-js/footable.all.min.js',
     'resources/panel/js/panel/miscellaneous.js',
     'resources/panel/js/panel/MtzValidator.js',
-    'resources/panel/js/panel/product_form.js',
-    'resources/panel/js/panel/drug_therapeutic_action.js',
+
 ], 'public/js/panel.js','./');
 
 
 mix.js('resources/js/app.js', 'public/js');
+
+mix.js('resources/panel/js/panel/product_form.js', 'public/js/pages/products.js');
+mix.js('resources/panel/js/panel/drug_therapeutic_action.js', 'public/js/pages/drug_therapeutic_actions.js');
