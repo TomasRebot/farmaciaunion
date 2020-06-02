@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Panel\Admin;
 
 use App\Core\Controllers\BaseController;
 use App\Core\DynamicTableResources\RoleTableResource;
-use App\Core\interfaces\ControllerContract;
+use App\Core\Interfaces\ControllerContract;
 use App\Entities\Form;
 use App\Entities\Permission;
 use App\Entities\Role;

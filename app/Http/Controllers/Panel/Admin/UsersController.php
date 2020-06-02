@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\Panel\Admin;
 use App\Core\Controllers\BaseController;
 use App\Core\DynamicTableResources\UserTableResource;
-use App\Core\interfaces\ControllerContract;
+use App\Core\Interfaces\ControllerContract;
 
 use App\Entities\Role;
 use App\Entities\User;
 
-use App\Http\Requests\Backend\users\UsersCreateFormRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;

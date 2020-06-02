@@ -4,7 +4,7 @@ namespace App\Entities;
 
 
 use App\Core\Entities\BaseEntity;
-use App\Core\interfaces\ComponentInterface;
+use App\Core\Interfaces\ComponentInterface;
 
 
 class Module extends BaseEntity implements ComponentInterface

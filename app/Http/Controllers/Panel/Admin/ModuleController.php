@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Panel\Admin;
 
 use App\Core\Controllers\BaseController;
 use App\Core\DynamicTableResources\ModuleTableResource;
-use App\Core\interfaces\ControllerContract;
+use App\Core\Interfaces\ControllerContract;
 use App\Entities\Module;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;

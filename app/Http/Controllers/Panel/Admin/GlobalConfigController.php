@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Panel\Admin;
 use App\Core\Controllers\BaseController;
-use App\Core\interfaces\ControllerContract;
+use App\Core\Interfaces\ControllerContract;
 
 use App\GlobalConfig;
 use Illuminate\Http\Request;

@@ -8,7 +8,7 @@ use App\Entities\Module;
 
 
 
-use App\Core\interfaces\ComponentInterface;
+use App\Core\Interfaces\ComponentInterface;
 use Illuminate\Support\Facades\Route;
 
 class Menu implements ComponentInterface
