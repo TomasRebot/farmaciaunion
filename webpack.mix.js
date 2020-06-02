@@ -22,6 +22,9 @@ mix.styles([
     'resources/panel/css/plugins/switchery/switchery.css',
     'resources/panel/css/plugins/summernote/summernote-bs4.css',
     'resources/panel/css/plugins/font-awesome/css/font-awesome.css',
+    'resources/panel/css/plugins/datatables/dataTables.css',
+    'resources/panel/css/animate.css',
+    'resources/panel/css/table-css/footable.core.css',
 ], 'public/css/panel.css','./')
 
 .scripts([
@@ -40,6 +43,8 @@ mix.styles([
     'resources/panel/js/plugins/select2/select2.js',
     'resources/panel/js/plugins/switchery/switchery.js',
     'resources/panel/js/plugins/validate/jquery.validate.min.js',
+    'resources/panel/js/plugins/table-js/clipboard.min.js',
+    'resources/panel/js/plugins/table-js/footable.all.min.js',
     'resources/panel/js/panel/miscellaneous.js',
     'resources/panel/js/panel/MtzValidator.js',
     'resources/panel/js/panel/product_form.js',
