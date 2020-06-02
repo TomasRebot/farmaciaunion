@@ -45,19 +45,45 @@ class UserTableResource
             foreach($request->columnFilters as $key =>  $filter){
                 switch ($filter){
                     case'role_list':
-                        $query = $query->whereState('1')
-                            ->whereHas('roles', function($role)use($filter){ $role->where('name', 'LIKE', $filter); });
+                        if(isCurrentSuperAdmin()){
+                            $query = $query->whereState('1')
+                                ->whereHas('roles', function($role)use($filter){ $role->where('name', 'LIKE', $filter); });
+                        }else{
+                            $query = $query->whereState('1')
+                                ->whereHas('roles', function($role)use($filter){
+                                    $role->where('name', 'LIKE', $filter)->where('name', '!=', 'Super usuario')
+                                ; });
+                        }
+
                     break;
                     default:
-                        $query = $query->orWhere($filter, 'LIKE', '%'.$request->search_query.'%')
-                            ->whereState('1')
-                            ->whereHas('roles', function($role){ $role->where('name', '!=', 'Cliente'); });
+                        if(isCurrentSuperAdmin()) {
+                            $query = $query->orWhere($filter, 'LIKE', '%' . $request->search_query . '%')
+                                ->whereState('1')
+                                ->whereHas('roles', function ($role) {
+                                    $role->where('name', '!=', 'Cliente');
+                                });
+                        }else{
+                            $query = $query->orWhere($filter, 'LIKE', '%' . $request->search_query . '%')
+                                ->whereState('1')
+                                ->whereHas('roles', function ($role) {
+                                    $role->where('name', '!=', 'Cliente')->where('name', '!=' ,'Super usuario');
+                                });
+                        }
                     break;
                 }
             }
         }
-        $query = $query->whereHas('roles', function($role){ $role->where('name', '!=', 'Cliente'); });
+        if(isCurrentSuperAdmin()) {
 
+            $query = $query->whereHas('roles', function ($role) {
+                $role->where('name', '!=', 'Cliente');
+            });
+        }else{
+            $query = $query->whereHas('roles', function ($role) {
+                $role->where('name', '!=', 'Cliente')->where('name', '!=' ,'Super usuario');
+            });
+        }
 
         $sort = $request->sort;
         if(isset($sort['type']) && isset($sort['field'])){
