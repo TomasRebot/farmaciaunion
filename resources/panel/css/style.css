@@ -9638,3 +9638,15 @@ a.accion{
     width: 100%;
     max-height: 25%!important;
 }
+.icheckbox_square-green:checked {
+    color: #1ab394!important;
+    background: #ffffff!important;
+}
+input[type=checkbox]:checked {
+    color: #1ab394!important;
+    background: #ffffff!important;
+}
+input[type=radio]:checked {
+    color: #1ab394!important;
+    background: #ffffff!important;
+}

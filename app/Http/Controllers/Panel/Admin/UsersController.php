@@ -38,8 +38,14 @@ class UsersController extends BaseController implements ControllerContract
     {
         DB::beginTransaction();
         try{
-            $user = User::create($request->all());
+            $user = new User();
+            $user->fill($request->all());
             $user->roles()->sync($request->roles);
+            $new_password = $request->password;
+
+            if(isset($new_password) && $new_password !== ''){
+                $user->password = bcrypt($request->password);
+            }
             $user->save();
             DB::commit();
             $request->session()->flash('flash_message', 'El usuario se ha creado exitosamente!');
@@ -56,10 +62,13 @@ class UsersController extends BaseController implements ControllerContract
     {
         DB::beginTransaction();
         try{
-            $stmt = $request->password == '' ? $request->except('password') : $request->all();
-
-            $user->update($stmt);
+            $user->fill($request->all());
             $user->roles()->sync($request->roles);
+            $new_password = $request->password;
+            if(isset($new_password) && $new_password !== ''){
+                $user->password = bcrypt($request->password);
+            }
+            $user->save();
             $user->save();
             DB::commit();
             $request->session()->flash('flash_message', 'El usuario se ha actualizado exitosamente!');
