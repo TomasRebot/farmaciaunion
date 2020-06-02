@@ -162,10 +162,6 @@ class FireInitialLoadJob implements ShouldQueue
             return false;
         return true;
     }
-
-
-
-
     private function getCleanFromArray($value){
         if($value !== [] && !is_array($value) && $value !== ''){
             return trim($value);
@@ -173,7 +169,6 @@ class FireInitialLoadJob implements ShouldQueue
             return 'No presente en archivo importador';
         }
     }
-
     private function parsePrice($string){
         $array = str_split($string);
         if(count($array) < 3){
