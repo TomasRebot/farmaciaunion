@@ -70,10 +70,10 @@ class UsersController extends BaseController implements ControllerContract
             if(isset($new_password) && $new_password !== ''){
                 $user->password = bcrypt($request->password);
             }
+
             $user->save();
-            $user->update($stmt);
             $user->roles()->sync($request->roles);
-            $user->save();
+
             DB::commit();
             $request->session()->flash('flash_message', 'El usuario se ha actualizado exitosamente!');
             return redirect()->route('users.index');
