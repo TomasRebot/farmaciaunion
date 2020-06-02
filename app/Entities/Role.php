@@ -43,4 +43,13 @@ class Role extends BaseEntity
         }
     }
 
+    public function scopeForCurrentUserTableResource(){
+        if(isCurrentSuperAdmin()){
+            return $this;
+        }else{
+            return $this->whereNotIn('name', ['Cliente' ,'Super usuario'] )->where('state', 1);
+        }
+    }
+
+
 }

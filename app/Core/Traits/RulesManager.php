@@ -40,6 +40,7 @@ trait RulesManager
 
     public function can($permission)
     {
+        //todo implementar cache
 
         //llega permission key del formulario . accion
         //explode 0 es la key de form, explode 1 es la accion
@@ -49,8 +50,6 @@ trait RulesManager
             $roles = Auth::user()->roles->pluck('id')->unique();
             $form = $searched[0];
             $action = $searched[1];
-
-
 
             $permission = DB::table('permissions')->where('action', $searched[1])->first('id');
             $form = DB::table('forms')->where('key', $searched[0])->first('id');

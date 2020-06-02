@@ -84,7 +84,6 @@ class User extends BaseEntity implements Authenticatable
                 $role_list .=  ', ';
             }
 
-
         }
         return $role_list;
     }

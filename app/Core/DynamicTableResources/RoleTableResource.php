@@ -42,14 +42,17 @@ class RoleTableResource
             ["label" => 'Descripción',"field" => 'description'],
             ["label" => 'Estado',"field" => 'state'],
         ]);
-        $query = new Role();
+        $query = Role::forCurrentUserTableResource();
+
+        $idRoles = $query->pluck('id');
 
         if(isset($request->columnFilters) && count($request->columnFilters)){
             foreach($request->columnFilters as $key =>  $filter){
                 switch ($filter){
                     case'role': break;
                     default:
-                        $query = $query->orWhere($filter, 'LIKE', '%'.$request->search_query.'%');
+                        $query = $query->orWhere($filter, 'LIKE', '%'.$request->search_query.'%')
+                        ->whereIn('id', $idRoles);
                     break;
                 }
             }
