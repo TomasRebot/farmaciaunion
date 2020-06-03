@@ -15,7 +15,10 @@ class RoleTableSeeder extends Seeder
         $names = [
             'Administrador',
             'Super usuario',
-            'Cliente'
+            'Cliente',
+            'Visitador medico',
+            'Encargado medicamentos',
+            'Encargado perfumeria'
         ];
 
         foreach($names as $name){

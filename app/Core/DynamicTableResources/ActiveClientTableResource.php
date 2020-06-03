@@ -1,15 +1,19 @@
 <?php
 namespace App\Core\DynamicTableResources;
+use App\Core\Entities\BaseTableResource;
+use App\Core\Interfaces\ResourceTableInterface;
+use App\Entities\Client;
 use App\Entities\User;
 use Illuminate\Http\Request;
 
-class ActiveClientTableResource
+class ActiveClientTableResource extends BaseTableResource implements ResourceTableInterface
 {
 
     public function getResource(){
         return [
             'resource' => 'Client',
             'resolver' => 'ActiveClients',
+            'permissions' => permissionsTo($this->current_form),
 
             'url' =>route('api.dynamic.table'),
             'createUrl' =>route('clients.create'),
@@ -37,25 +41,12 @@ class ActiveClientTableResource
             ["label" => 'Email',"field" => 'email'],
             ["label" => 'Estado',"field" => 'state'],
         ]);
-        $query = new User();
-        if(isset($request->columnFilters) && count($request->columnFilters)){
-            foreach($request->columnFilters as $key =>  $filter){
-                $query = $query->orWhere($filter, 'LIKE', '%'.$request->search_query.'%')
-                    ->whereState('1')
-                    ->whereHas('roles', function($role){ $role->where('name', 'Cliente'); });
-            }
-        }
-        $query = $query->whereHas('roles', function($role){ $role->where('name', 'Cliente'); })
-            ->whereState('1')
-            ->select('name','email','state','id');
-        $sort = $request->sort;
-        if(isset($sort['type']) && isset($sort['field'])){
-            $field = ($sort['field'] != '') ? $sort['field'] : null;
-            $type = ($sort['type'] != '') ? $sort['type'] : null;
-            if(!is_null($field) && !is_null($type)){
-                $query = $query->orderBy($field, $type);
-            }
-        }
+        $query = new Client();
+
+        $query = $this->filter($query,$request)->activeClients();
+
+        $query = $this->sort($query,$request);
+
         $data = $query->paginate($request->per_page)->appends(
             ['sort' => $request->sort]);
 

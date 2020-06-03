@@ -1,11 +1,13 @@
 <?php
 namespace App\Core\DynamicTableResources;
+use App\Core\Entities\BaseTableResource;
+use App\Core\Interfaces\ResourceTableInterface;
 use App\Entities\Drug;
 
 use App\Entities\TherapeuticAction;
 use Illuminate\Http\Request;
 
-class TherapeuticActionTableResource
+class TherapeuticActionTableResource extends BaseTableResource implements ResourceTableInterface
 {
 
     public function getResource(){
@@ -14,6 +16,8 @@ class TherapeuticActionTableResource
             'page_name' => 'Acciones Terapeuticas',
             'resource' => 'TherapeuticAction',
             'resolver' => 'TherapeuticActionResolver',
+
+            'permissions' => permissionsTo($this->current_form),
 
             'url' =>route('api.dynamic.table'),
             'createUrl' =>route('therapeutic-actions.create'),
@@ -43,27 +47,9 @@ class TherapeuticActionTableResource
         ]);
         $query = new TherapeuticAction();
 
-        if(isset($request->columnFilters) && count($request->columnFilters)){
-            foreach($request->columnFilters as $key =>  $filter){
-                switch ($filter){
-                    default:
-                        $query = $query->orWhere($filter, 'LIKE', '%'.$request->search_query.'%');
-                    break;
-                }
-            }
-        }
-        $sort = $request->sort;
-        if(isset($sort['type']) && isset($sort['field'])){
-            switch ($sort['field']){
-                default:
-                    $field = ($sort['field'] != '') ? $sort['field'] : null;
-                    $type = ($sort['type'] != '') ? $sort['type'] : null;
-                    if(!is_null($field) && !is_null($type)){
-                        $query = $query->orderBy($field, $type);
-                    }
-                break;
-            }
-        }
+        $query = $this->filter($query, $request);
+
+        $query = $this->sort($query, $request);
 
         $data = $query->paginate($request->per_page)->appends(
             ['sort' => $request->sort]);

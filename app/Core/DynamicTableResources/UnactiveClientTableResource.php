@@ -1,9 +1,12 @@
 <?php
 namespace App\Core\DynamicTableResources;
-use App\Entities\User;
+use App\Core\Entities\BaseTableResource;
+use App\Core\Interfaces\ResourceTableInterface;
+use App\Entities\Client;
+
 use Illuminate\Http\Request;
 
-class UnactiveClientTableResource
+class UnactiveClientTableResource  extends BaseTableResource implements ResourceTableInterface
 {
 
     public function getResource(){
@@ -14,7 +17,7 @@ class UnactiveClientTableResource
             'url' =>route('api.dynamic.table'),
             'createUrl' => null,
             'editUrl' => route('clients.edit', ['client' => 'Client']),
-
+            'permissions' => permissionsTo($this->current_form),
             'deleteUrl' => null,
             'deleteLabel' => null,
             'deleteModalQuestion' => null,
@@ -37,25 +40,13 @@ class UnactiveClientTableResource
             ["label" => 'Email',"field" => 'email'],
             ["label" => 'Estado',"field" => 'state'],
         ]);
-        $query = new User();
-        if(isset($request->columnFilters) && count($request->columnFilters)){
-            foreach($request->columnFilters as $key =>  $filter){
-                $query = $query->orWhere($filter, 'LIKE', '%'.$request->search_query.'%')
-                    ->whereState('0')
-                    ->whereHas('roles', function($role){ $role->where('name', 'Cliente'); });
-            }
-        }
-        $query = $query->whereHas('roles', function($role){ $role->where('name', 'Cliente'); })
-            ->whereState('0')
-            ->select('name','email','state','id');
-        $sort = $request->sort;
-        if(isset($sort['type']) && isset($sort['field'])){
-            $field = ($sort['field'] != '') ? $sort['field'] : null;
-            $type = ($sort['type'] != '') ? $sort['type'] : null;
-            if(!is_null($field) && !is_null($type)){
-                $query = $query->orderBy($field, $type);
-            }
-        }
+        $query = new Client();
+
+        $query = $this->filter($query,$request)->unactiveClients();
+
+        $query = $this->sort($query,$request);
+
+
         $data = $query->paginate($request->per_page)->appends(
             ['sort' => $request->sort]);
 

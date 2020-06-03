@@ -15,16 +15,16 @@
             @on-search="onSearchChange"
             :totalRows="totalRecords"
             :isLoading.sync="isLoading">
-            <div slot="table-actions">
+            <div slot="table-actions" v-if="canDoSomething">
                 <div class="btn-group">
                     <button type="button"
                             style="min-width:300px!important;"
                             class="btn btn-primary btn-block dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
                         Acciones
                     </button>
-                    <div class="dropdown-menu dropdown-menu-lg-right">
+                    <div class="dropdown-menu dropdown-menu-lg-right" >
                         <button type="button"
-                                v-if="apiResource.createUrl !== null"
+                                v-if="apiResource.createUrl !== null && apiResource.permissions.create"
                                 class="btn btn-secondary accion"
                                 style="min-width:300px!important"
                                 @click='onCreate'
@@ -32,28 +32,28 @@
                         >Nuevo
                         </button>
                         <button type="button"
-                                v-if="apiResource.deleteUrl !== null"
+                                v-if="apiResource.deleteUrl !== null && apiResource.permissions.delete"
                                 class="btn btn-secondary accion"
                                 style="min-width:300px!important"
                                 @click='onDelete'
                         >{{apiResource.deleteLabel}}
                         </button>
                         <button type="button"
-                                v-if="apiResource.restoreUrl !== null && apiResource.restoreUrl !== undefined"
+                                v-if="apiResource.restoreUrl !== null && apiResource.restoreUrl !== undefined && apiResource.permissions.update"
                                 class="btn btn-secondary accion"
                                 style="min-width:300px!important"
                                 @click='onRestore'
                         >{{apiResource.restoreLabel}}
                         </button>
                         <button type="button"
-                                v-if="apiResource.editUrl !== null && apiResource.editUrl !== undefined"
+                                v-if="apiResource.editUrl !== null && apiResource.editUrl !== undefined && apiResource.permissions.update"
                                 class="btn btn-secondary accion"
                                 style="min-width:300px!important"
                                 @click='onEdit'
                         >Editar
                         </button>
                         <button type="button"
-                                v-if="apiResource.externalUrl !== null && apiResource.externalUrl !== undefined"
+                                v-if="apiResource.externalUrl !== null && apiResource.externalUrl !== undefined && apiResource.permissions.update"
                                 class="btn btn-secondary accion"
                                 style="min-width:300px!important"
                                 @click='onExternalUrlClicked'
@@ -152,6 +152,23 @@
                     disableSelectInfo: false, // disable the select info panel on top
                 },
             };
+        },
+        computed:{
+            canDoSomething: function(){
+                let cantidad = 0;
+                let obj = this.apiResource.permissions;
+                console.log(obj)
+                Object.keys(obj).filter((item) =>{
+                    if(obj[item])
+                        cantidad++;
+                });
+                console.log(cantidad)
+                if(cantidad <=1){
+                    return false
+                }else{
+                    return true;
+                }
+            }
         },
         methods : {
             onCreate(){

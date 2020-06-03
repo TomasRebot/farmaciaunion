@@ -1,10 +1,12 @@
 <?php
 namespace App\Core\DynamicTableResources;
+use App\Core\Entities\BaseTableResource;
+use App\Core\Interfaces\ResourceTableInterface;
 use App\Entities\Permission;
 
 use Illuminate\Http\Request;
 
-class PermissionTableResource
+class PermissionTableResource extends BaseTableResource implements ResourceTableInterface
 {
 
     public function getResource(){
@@ -13,6 +15,8 @@ class PermissionTableResource
 
             'resource' => 'Permission',
             'resolver' => 'PermissionResolver',
+
+            'permissions' => permissionsTo($this->current_form),
 
             'url' =>route('api.dynamic.table'),
             'createUrl' =>route('permissions.create'),
@@ -28,7 +32,7 @@ class PermissionTableResource
 
             'perPage' => 10,
             'perPageLabel' => 'Permisos por página',
-            'filters' => ['name', 'email', 'role_list'],
+            'filters' => ['name', 'description', 'action' , 'icon'],
             'emptyTableLabel' => 'No se encontraron registros'
         ];
     }
@@ -43,31 +47,9 @@ class PermissionTableResource
         ]);
         $query = new Permission();
 
-        if(isset($request->columnFilters) && count($request->columnFilters)){
-            foreach($request->columnFilters as $key =>  $filter){
-                switch ($filter){
-                    case'role': break;
-                    default:
-                        $query = $query->orWhere($filter, 'LIKE', '%'.$request->search_query.'%');
-                    break;
-                }
-            }
-        }
+        $query = $this->filter($query, $request);
 
-
-        $sort = $request->sort;
-        if(isset($sort['type']) && isset($sort['field'])){
-            switch ($sort['field']){
-                default:
-                    $field = ($sort['field'] != '') ? $sort['field'] : null;
-                    $type = ($sort['type'] != '') ? $sort['type'] : null;
-                    if(!is_null($field) && !is_null($type)){
-                        $query = $query->orderBy($field, $type);
-                    }
-
-                break;
-            }
-        }
+        $query = $this->sort($query, $request);
 
         $data = $query->paginate($request->per_page)->appends(
             ['sort' => $request->sort]);

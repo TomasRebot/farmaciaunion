@@ -2,10 +2,13 @@
 namespace App\Core\DynamicTableResources;
 
 
+use App\Core\Entities\BaseTableResource;
+use App\Core\Interfaces\ResourceTableInterface;
 use App\Entities\Form;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
-class FormsTableResource
+class FormsTableResource extends BaseTableResource implements ResourceTableInterface
 {
 
     public function getResource(){
@@ -14,6 +17,8 @@ class FormsTableResource
 
             'resource' => 'Form',
             'resolver' => 'FormResolver',
+
+            'permissions' => permissionsTo($this->current_form),
 
             'url' =>route('api.dynamic.table'),
             'createUrl' =>route('forms.create'),
@@ -29,7 +34,8 @@ class FormsTableResource
 
             'perPage' => 10,
             'perPageLabel' => 'Formularios por página',
-            'filters' => ['name', 'description', 'internal_handler','icon','order','state'],
+
+            'filters' => ['name', 'key','target','order','state', 'module'],
             'emptyTableLabel' => 'No se encontraron registros'
         ];
     }
@@ -46,49 +52,15 @@ class FormsTableResource
 
         $query = new Form();
 
-        if(isset($request->columnFilters) && count($request->columnFilters)){
-            foreach($request->columnFilters as $key =>  $filter){
-                switch ($filter){
-                    case'role': break;
-                    default:
-                        $query = $query->orWhere($filter, 'LIKE', '%'.$request->search_query.'%');
-                    break;
-                }
-            }
-        }
+        $query = $this->filter($query,$request);
 
+        $query = $this->sort($query,$request);
 
-        $sort = $request->sort;
-        if(isset($sort['type']) && isset($sort['field'])){
-            switch ($sort['field']){
-                case 'module_name':
-                    $query->with(['module' => function($module) use($sort){
-                        $field = ($sort['field'] != '') ? $sort['field'] : null;
-                        $type = ($sort['type'] != '') ? $sort['type'] : null;
-                        if(!is_null($field) && !is_null($type)){
-                            $module->orderBy('name', $type);
-                        }
-                    }]);
-                break;
-                default:
-                    $field = ($sort['field'] != '') ? $sort['field'] : null;
-                    $type = ($sort['type'] != '') ? $sort['type'] : null;
-                    if(!is_null($field) && !is_null($type)){
-                        $query = $query->orderBy($field, $type);
-                    }
-
-                break;
-            }
-        }
-
-        $data = $query->paginate($request->per_page)->appends(
-            ['sort' => $request->sort]);
+        $data = $query->paginate($request->per_page)->appends( ['sort' => $request->sort]);
 
         $data->each(function($form){
             $form['module_name'] = $form->moduleNameString;
         });
-
-
 
         return [
             'paginator' =>$data ,
@@ -97,5 +69,38 @@ class FormsTableResource
             'request' => $request->all()
         ];
 
+    }
+
+    public function filter($query, $request)
+    {
+        if(isset($request->columnFilters) && count($request->columnFilters)){
+            foreach($request->columnFilters as $key =>  $filter){
+                switch ($filter){
+                    case 'module':
+                        $query = $query->orWhereHas('module', function($module)use($request){
+                            $module->where('name',  'LIKE', '%'.$request->search_query.'%');
+                        });
+                        break;
+                    default:
+                        $query = $query->orWhere($filter, 'LIKE', '%'.$request->search_query.'%');
+                        break;
+                }
+            }
+        }
+        return $query;
+    }
+
+    public function sort($query, $request)
+    {
+        $sort = $request->sort;
+        if(isset($sort['type']) && isset($sort['field'])){
+            switch ($sort['field']){
+                case 'module_name':break;
+                default:
+                    $query = parent::sort($query,$request);
+                    break;
+            }
+        }
+        return $query;
     }
 }

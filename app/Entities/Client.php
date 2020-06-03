@@ -7,9 +7,16 @@ class Client extends User
 
     protected $table = 'users';
 
-//    public function salesOrders(){
-//        return $this->hasMany(SaleOrder::class, 'client_id', 'id');
-//    }
 
+    public function scopeActiveClients($query)
+    {
+        return $query->actives()
+        ->whereHas('roles', function($role){ $role->where('name', 'Cliente'); });
+    }
+    public function scopeUnactiveClients($query)
+    {
+        return $query->unactives()
+            ->whereHas('roles', function($role){ $role->where('name', 'Cliente'); });
+    }
 
 }
