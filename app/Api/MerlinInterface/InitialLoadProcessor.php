@@ -28,7 +28,7 @@ class InitialLoadProcessor implements MerlinContract
     public function updateDB(Request $request)
     {
             $this->handle();
-//        FireInitialLoadJob::dispatch();
+        FireInitialLoadJob::dispatch();
         return response()->json(['status' => 200,'message' => 'queue running on secondary thread']);
 
     }
