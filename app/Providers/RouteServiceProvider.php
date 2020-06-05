@@ -51,6 +51,8 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapCoreRoutes();
 
+        $this->mapSiteRoutes();
+
 
 
 
@@ -100,5 +102,12 @@ class RouteServiceProvider extends ServiceProvider
             ->prefix('panel')
             ->namespace('App\Http\Controllers\Panel')
             ->group(base_path('routes/panel.php'));
+    }
+
+    protected function mapSiteRoutes()
+    {
+        Route::middleware(['web'])
+            ->namespace('App\Http\Controllers\Site')
+            ->group(base_path('routes/site.php'));
     }
 }

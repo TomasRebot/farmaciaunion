@@ -14,16 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 
-Route::get('/', function () {
-    return redirect()->to('login');
-
-})->name('site');
 
 
 
-Route::namespace('Panel')->group(function () {
-    Route::get('/panel', 'HomeController@index')->name('panel');
-});
+
+
+
+
+
 
 
 

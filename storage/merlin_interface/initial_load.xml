@@ -1,0 +1,1232 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<doc_in>
+   <productos>
+      <producto>
+         <merlin_id>0048773</merlin_id>
+         <nombre>+50</nombre>
+         <presentacion>comp.x 30</presentacion>
+         <numero_troquel>9948773</numero_troquel>
+         <codigo_barras>7790839000267</codigo_barras>
+         <unidad_fragmentada>30</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>44960</precio>
+         <laboratorio>
+            <merlin_id>372</merlin_id>
+            <nombre>ISA         </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>000924</merlin_id>
+            <nombre>vit.+asoc.                    </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000536</merlin_id>
+            <nombre>energizante psicofisico       </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0030940</merlin_id>
+         <nombre>102 PLUS</nombre>
+         <presentacion>comp.x 30</presentacion>
+         <numero_troquel>9930940</numero_troquel>
+         <codigo_barras>7791984000485</codigo_barras>
+         <unidad_fragmentada>30</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>47475</precio>
+         <laboratorio>
+            <merlin_id>763</merlin_id>
+            <nombre>Gram¢n-Mille</nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>009285</merlin_id>
+            <nombre>vit.+minerales                </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000346</merlin_id>
+            <nombre>suplemento dietario           </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0033894</merlin_id>
+         <nombre>102 PLUS</nombre>
+         <presentacion>comp.x 60</presentacion>
+         <numero_troquel>9933894</numero_troquel>
+         <codigo_barras>7791984000492</codigo_barras>
+         <unidad_fragmentada>60</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>80602</precio>
+         <laboratorio>
+            <merlin_id>763</merlin_id>
+            <nombre>Gram¢n-Mille</nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>009285</merlin_id>
+            <nombre>vit.+minerales                </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000346</merlin_id>
+            <nombre>suplemento dietario           </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0041040</merlin_id>
+         <nombre>102 PLUS</nombre>
+         <presentacion>comp.x 90</presentacion>
+         <numero_troquel>9941040</numero_troquel>
+         <codigo_barras>7791984000508</codigo_barras>
+         <unidad_fragmentada>90</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>118399</precio>
+         <laboratorio>
+            <merlin_id>763</merlin_id>
+            <nombre>Gram¢n-Mille</nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>009285</merlin_id>
+            <nombre>vit.+minerales                </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000346</merlin_id>
+            <nombre>suplemento dietario           </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0038177</merlin_id>
+         <nombre>102 PLUS EFERVESCENTE</nombre>
+         <presentacion>sob.x 15</presentacion>
+         <numero_troquel>9938177</numero_troquel>
+         <codigo_barras>7791984000515</codigo_barras>
+         <unidad_fragmentada>15</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>32727</precio>
+         <laboratorio>
+            <merlin_id>763</merlin_id>
+            <nombre>Gram¢n-Mille</nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>009285</merlin_id>
+            <nombre>vit.+minerales                </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000346</merlin_id>
+            <nombre>suplemento dietario           </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0041681</merlin_id>
+         <nombre>102 SPORT</nombre>
+         <presentacion>sob.x 30</presentacion>
+         <numero_troquel>9941681</numero_troquel>
+         <codigo_barras>7791984000522</codigo_barras>
+         <unidad_fragmentada>30</unidad_fragmentada>
+         <stock>-1</stock>
+         <precio>67799</precio>
+         <laboratorio>
+            <merlin_id>763</merlin_id>
+            <nombre>Gram¢n-Mille</nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>009285</merlin_id>
+            <nombre>vit.+minerales                </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000346</merlin_id>
+            <nombre>suplemento dietario           </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0052705</merlin_id>
+         <nombre>102 SPORT MAX</nombre>
+         <presentacion>sob.x 30</presentacion>
+         <numero_troquel>9952705</numero_troquel>
+         <codigo_barras>7791984000539</codigo_barras>
+         <unidad_fragmentada>30</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>76556</precio>
+         <laboratorio>
+            <merlin_id>763</merlin_id>
+            <nombre>Gram¢n-Mille</nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>009285</merlin_id>
+            <nombre>vit.+minerales                </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000346</merlin_id>
+            <nombre>suplemento dietario           </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0018000</merlin_id>
+         <nombre>3 TC</nombre>
+         <presentacion>150 mg comp.rec.x 60</presentacion>
+         <numero_troquel>4108451</numero_troquel>
+         <codigo_barras>7796930007310</codigo_barras>
+         <unidad_fragmentada>60</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>471325</precio>
+         <laboratorio>
+            <merlin_id>107</merlin_id>
+            <nombre>GlaxoSmithKl</nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>001035</merlin_id>
+            <nombre>lamivudina                    </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000600</merlin_id>
+            <nombre>antiviral contra hiv          </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0018001</merlin_id>
+         <nombre>3 TC</nombre>
+         <presentacion>sol.x 240 ml</presentacion>
+         <numero_troquel>4108371</numero_troquel>
+         <codigo_barras>7796930007303</codigo_barras>
+         <unidad_fragmentada>1</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>206427</precio>
+         <laboratorio>
+            <merlin_id>107</merlin_id>
+            <nombre>GlaxoSmithKl</nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>001035</merlin_id>
+            <nombre>lamivudina                    </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000600</merlin_id>
+            <nombre>antiviral contra hiv          </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0027613</merlin_id>
+         <nombre>3 TC + AZT ELEA</nombre>
+         <presentacion>comp.x 60</presentacion>
+         <numero_troquel>4754931</numero_troquel>
+         <codigo_barras>7796285049928</codigo_barras>
+         <unidad_fragmentada>60</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>735474</precio>
+         <laboratorio>
+            <merlin_id>498</merlin_id>
+            <nombre>Elea - Phoen</nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>001217</merlin_id>
+            <nombre>lamivudina+zidovudina         </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000600</merlin_id>
+            <nombre>antiviral contra hiv          </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0021955</merlin_id>
+         <nombre>3 TC COMPLEX</nombre>
+         <presentacion>comp.rec.x 60</presentacion>
+         <numero_troquel>4408181</numero_troquel>
+         <codigo_barras>7796930003336</codigo_barras>
+         <unidad_fragmentada>60</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>1068855</precio>
+         <laboratorio>
+            <merlin_id>107</merlin_id>
+            <nombre>GlaxoSmithKl</nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>001217</merlin_id>
+            <nombre>lamivudina+zidovudina         </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000600</merlin_id>
+            <nombre>antiviral contra hiv          </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0033893</merlin_id>
+         <nombre>4 x 4</nombre>
+         <presentacion>50 mg comp.rec.x 4</presentacion>
+         <numero_troquel>5159542</numero_troquel>
+         <codigo_barras>7790839980248</codigo_barras>
+         <unidad_fragmentada>4</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>15000</precio>
+         <laboratorio>
+            <merlin_id>372</merlin_id>
+            <nombre>ISA         </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>001213</merlin_id>
+            <nombre>sildenafil                    </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000457</merlin_id>
+            <nombre>trat.disfuncion sexual masc.  </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0044805</merlin_id>
+         <nombre>5 XR 500</nombre>
+         <presentacion>500 mg comp.x 100</presentacion>
+         <numero_troquel>5895422</numero_troquel>
+         <codigo_barras>7795349000189</codigo_barras>
+         <unidad_fragmentada>100</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>644977</precio>
+         <laboratorio>
+            <merlin_id>013</merlin_id>
+            <nombre>Ariston     </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>000040</merlin_id>
+            <nombre>mesalazina                    </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000569</merlin_id>
+            <nombre>antiinflam.intestinal         </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0044804</merlin_id>
+         <nombre>5 XR 500</nombre>
+         <presentacion>500 mg comp.x 50</presentacion>
+         <numero_troquel>5895421</numero_troquel>
+         <codigo_barras>7795349000172</codigo_barras>
+         <unidad_fragmentada>50</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>352005</precio>
+         <laboratorio>
+            <merlin_id>013</merlin_id>
+            <nombre>Ariston     </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>000040</merlin_id>
+            <nombre>mesalazina                    </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000569</merlin_id>
+            <nombre>antiinflam.intestinal         </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0011105</merlin_id>
+         <nombre>5-ASA 400</nombre>
+         <presentacion>400 mg comp.x 30</presentacion>
+         <numero_troquel>3313721</numero_troquel>
+         <codigo_barras>7795327061164</codigo_barras>
+         <unidad_fragmentada>30</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>216913</precio>
+         <laboratorio>
+            <merlin_id>067</merlin_id>
+            <nombre>Dom¡nguez   </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>000040</merlin_id>
+            <nombre>mesalazina                    </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000569</merlin_id>
+            <nombre>antiinflam.intestinal         </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0011106</merlin_id>
+         <nombre>5-ASA 400</nombre>
+         <presentacion>400 mg comp.x 60</presentacion>
+         <numero_troquel>3313722</numero_troquel>
+         <codigo_barras>7795327061171</codigo_barras>
+         <unidad_fragmentada>60</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>412440</precio>
+         <laboratorio>
+            <merlin_id>067</merlin_id>
+            <nombre>Dom¡nguez   </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>000040</merlin_id>
+            <nombre>mesalazina                    </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000569</merlin_id>
+            <nombre>antiinflam.intestinal         </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0011107</merlin_id>
+         <nombre>5-ASA 400</nombre>
+         <presentacion>400 mg sup.x 10</presentacion>
+         <numero_troquel>3314131</numero_troquel>
+         <codigo_barras>7795327061188</codigo_barras>
+         <unidad_fragmentada>10</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>99369</precio>
+         <laboratorio>
+            <merlin_id>067</merlin_id>
+            <nombre>Dom¡nguez   </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>000040</merlin_id>
+            <nombre>mesalazina                    </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000569</merlin_id>
+            <nombre>antiinflam.intestinal         </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0011108</merlin_id>
+         <nombre>5-ASA 400</nombre>
+         <presentacion>400 mg sup.x 30</presentacion>
+         <numero_troquel>3314132</numero_troquel>
+         <codigo_barras>7795327061195</codigo_barras>
+         <unidad_fragmentada>30</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>284452</precio>
+         <laboratorio>
+            <merlin_id>067</merlin_id>
+            <nombre>Dom¡nguez   </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>000040</merlin_id>
+            <nombre>mesalazina                    </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000569</merlin_id>
+            <nombre>antiinflam.intestinal         </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0043119</merlin_id>
+         <nombre>5-ASA 500</nombre>
+         <presentacion>500 mg comp.x 30</presentacion>
+         <numero_troquel>5820131</numero_troquel>
+         <codigo_barras>7795327063625</codigo_barras>
+         <unidad_fragmentada>30</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>230446</precio>
+         <laboratorio>
+            <merlin_id>067</merlin_id>
+            <nombre>Dom¡nguez   </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>000040</merlin_id>
+            <nombre>mesalazina                    </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000569</merlin_id>
+            <nombre>antiinflam.intestinal         </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0043120</merlin_id>
+         <nombre>5-ASA 500</nombre>
+         <presentacion>500 mg comp.x 60</presentacion>
+         <numero_troquel>5820132</numero_troquel>
+         <codigo_barras>7795327063632</codigo_barras>
+         <unidad_fragmentada>60</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>414814</precio>
+         <laboratorio>
+            <merlin_id>067</merlin_id>
+            <nombre>Dom¡nguez   </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>000040</merlin_id>
+            <nombre>mesalazina                    </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000569</merlin_id>
+            <nombre>antiinflam.intestinal         </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0043121</merlin_id>
+         <nombre>5-ASA 800</nombre>
+         <presentacion>800 mg comp.x 30</presentacion>
+         <numero_troquel>5820001</numero_troquel>
+         <codigo_barras>7795327063670</codigo_barras>
+         <unidad_fragmentada>30</unidad_fragmentada>
+         <stock>-1</stock>
+         <precio>368697</precio>
+         <laboratorio>
+            <merlin_id>067</merlin_id>
+            <nombre>Dom¡nguez   </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>000040</merlin_id>
+            <nombre>mesalazina                    </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000569</merlin_id>
+            <nombre>antiinflam.intestinal         </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0043122</merlin_id>
+         <nombre>5-ASA 800</nombre>
+         <presentacion>800 mg comp.x 60</presentacion>
+         <numero_troquel>5820002</numero_troquel>
+         <codigo_barras>7795327063687</codigo_barras>
+         <unidad_fragmentada>60</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>637611</precio>
+         <laboratorio>
+            <merlin_id>067</merlin_id>
+            <nombre>Dom¡nguez   </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>000040</merlin_id>
+            <nombre>mesalazina                    </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000569</merlin_id>
+            <nombre>antiinflam.intestinal         </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0040561</merlin_id>
+         <nombre>8 HORAS</nombre>
+         <presentacion>2 mg comp.rec. x 30</presentacion>
+         <numero_troquel>5624002</numero_troquel>
+         <codigo_barras>7796285053147</codigo_barras>
+         <unidad_fragmentada>30</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>78173</precio>
+         <laboratorio>
+            <merlin_id>498</merlin_id>
+            <nombre>Elea - Phoen</nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>010401</merlin_id>
+            <nombre>eszopiclona                   </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000291</merlin_id>
+            <nombre>hipnotico                     </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0040562</merlin_id>
+         <nombre>8 HORAS</nombre>
+         <presentacion>3 mg comp.rec. x 30</presentacion>
+         <numero_troquel>5624131</numero_troquel>
+         <codigo_barras>7796285053154</codigo_barras>
+         <unidad_fragmentada>30</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>97713</precio>
+         <laboratorio>
+            <merlin_id>498</merlin_id>
+            <nombre>Elea - Phoen</nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>010401</merlin_id>
+            <nombre>eszopiclona                   </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000291</merlin_id>
+            <nombre>hipnotico                     </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0002586</merlin_id>
+         <nombre>A ACIDO</nombre>
+         <presentacion>0.05% cr.x 10 g</presentacion>
+         <numero_troquel>2168891</numero_troquel>
+         <codigo_barras>7795327060006</codigo_barras>
+         <unidad_fragmentada>1</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>44142</precio>
+         <laboratorio>
+            <merlin_id>067</merlin_id>
+            <nombre>Dom¡nguez   </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>000376</merlin_id>
+            <nombre>retinoico,ac.                 </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000388</merlin_id>
+            <nombre>queratolitico                 </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0002587</merlin_id>
+         <nombre>A ACIDO</nombre>
+         <presentacion>0.1% cr.x 10 g</presentacion>
+         <numero_troquel>2168971</numero_troquel>
+         <codigo_barras>7795327060020</codigo_barras>
+         <unidad_fragmentada>1</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>52247</precio>
+         <laboratorio>
+            <merlin_id>067</merlin_id>
+            <nombre>Dom¡nguez   </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>000376</merlin_id>
+            <nombre>retinoico,ac.                 </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000388</merlin_id>
+            <nombre>queratolitico                 </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0002588</merlin_id>
+         <nombre>A ACIDO</nombre>
+         <presentacion>0.2% cr.x 10 g</presentacion>
+         <numero_troquel>2062361</numero_troquel>
+         <codigo_barras>7795327060037</codigo_barras>
+         <unidad_fragmentada>1</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>57223</precio>
+         <laboratorio>
+            <merlin_id>067</merlin_id>
+            <nombre>Dom¡nguez   </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>000376</merlin_id>
+            <nombre>retinoico,ac.                 </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000388</merlin_id>
+            <nombre>queratolitico                 </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0012126</merlin_id>
+         <nombre>A ACIDO EMOLIENTE</nombre>
+         <presentacion>0.025% cr.x 30 g</presentacion>
+         <numero_troquel>3444242</numero_troquel>
+         <codigo_barras>7795327060051</codigo_barras>
+         <unidad_fragmentada>1</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>104066</precio>
+         <laboratorio>
+            <merlin_id>067</merlin_id>
+            <nombre>Dom¡nguez   </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>000376</merlin_id>
+            <nombre>retinoico,ac.                 </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000388</merlin_id>
+            <nombre>queratolitico                 </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0000005</merlin_id>
+         <nombre>A ACIDO VITAL</nombre>
+         <presentacion>cr.x 30 g</presentacion>
+         <numero_troquel>3068041</numero_troquel>
+         <codigo_barras>7795327060044</codigo_barras>
+         <unidad_fragmentada>1</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>101605</precio>
+         <laboratorio>
+            <merlin_id>067</merlin_id>
+            <nombre>Dom¡nguez   </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>000376</merlin_id>
+            <nombre>retinoico,ac.                 </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000388</merlin_id>
+            <nombre>queratolitico                 </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0051363</merlin_id>
+         <nombre>A FULL AFTER</nombre>
+         <presentacion>multifruta comp.solub.x6</presentacion>
+         <numero_troquel>9951363</numero_troquel>
+         <codigo_barras>7798183410749</codigo_barras>
+         <unidad_fragmentada>6</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>1500</precio>
+         <laboratorio>
+            <merlin_id>821</merlin_id>
+            <nombre>Novarum Phar</nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>001017</merlin_id>
+            <nombre>extractos vegetales+asoc.     </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000346</merlin_id>
+            <nombre>suplemento dietario           </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0051361</merlin_id>
+         <nombre>A FULL ENERGIZANTE F.R.</nombre>
+         <presentacion>frutos roj.comp.solub.x6</presentacion>
+         <numero_troquel>9951361</numero_troquel>
+         <codigo_barras>7798183410442</codigo_barras>
+         <unidad_fragmentada>6</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>1800</precio>
+         <laboratorio>
+            <merlin_id>821</merlin_id>
+            <nombre>Novarum Phar</nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>001289</merlin_id>
+            <nombre>guarana+asoc.                 </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000346</merlin_id>
+            <nombre>suplemento dietario           </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0051362</merlin_id>
+         <nombre>A FULL ENERGIZANTE G.</nombre>
+         <presentacion>guaran  comp.solub.x6</presentacion>
+         <numero_troquel>9951362</numero_troquel>
+         <codigo_barras>7798183410459</codigo_barras>
+         <unidad_fragmentada>6</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>1800</precio>
+         <laboratorio>
+            <merlin_id>821</merlin_id>
+            <nombre>Novarum Phar</nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>001289</merlin_id>
+            <nombre>guarana+asoc.                 </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000346</merlin_id>
+            <nombre>suplemento dietario           </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0051364</merlin_id>
+         <nombre>A FULL SEX UP</nombre>
+         <presentacion>tropical comp.solub.x6</presentacion>
+         <numero_troquel>9951364</numero_troquel>
+         <codigo_barras>7798183410756</codigo_barras>
+         <unidad_fragmentada>6</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>1850</precio>
+         <laboratorio>
+            <merlin_id>821</merlin_id>
+            <nombre>Novarum Phar</nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>001135</merlin_id>
+            <nombre>hierbas medicinales+vitaminas </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000346</merlin_id>
+            <nombre>suplemento dietario           </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0039923</merlin_id>
+         <nombre>A-VITEL</nombre>
+         <presentacion>100000 UI cr.pomo x 100g</presentacion>
+         <numero_troquel>9939923</numero_troquel>
+         <codigo_barras>7798030238014</codigo_barras>
+         <unidad_fragmentada>1</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>46800</precio>
+         <laboratorio>
+            <merlin_id>119</merlin_id>
+            <nombre>Medipharma  </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>009152</merlin_id>
+            <nombre>vit.a                         </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000629</merlin_id>
+            <nombre>reconstituyente dermico       </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0040563</merlin_id>
+         <nombre>A-VITEL</nombre>
+         <presentacion>100000 UI cr.pomo x 50 g</presentacion>
+         <numero_troquel>9940563</numero_troquel>
+         <codigo_barras>7798030237918</codigo_barras>
+         <unidad_fragmentada>1</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>32200</precio>
+         <laboratorio>
+            <merlin_id>119</merlin_id>
+            <nombre>Medipharma  </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>009152</merlin_id>
+            <nombre>vit.a                         </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000629</merlin_id>
+            <nombre>reconstituyente dermico       </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0022095</merlin_id>
+         <nombre>A-VITEL</nombre>
+         <presentacion>100000 UI cr.x 200 g</presentacion>
+         <numero_troquel>4383004</numero_troquel>
+         <codigo_barras>7798030238021</codigo_barras>
+         <unidad_fragmentada>1</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>72500</precio>
+         <laboratorio>
+            <merlin_id>119</merlin_id>
+            <nombre>Medipharma  </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>009152</merlin_id>
+            <nombre>vit.a                         </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000629</merlin_id>
+            <nombre>reconstituyente dermico       </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0039924</merlin_id>
+         <nombre>A-VITEL E</nombre>
+         <presentacion>cr.pomo x 100 g</presentacion>
+         <numero_troquel>9939924</numero_troquel>
+         <codigo_barras>7798030237932</codigo_barras>
+         <unidad_fragmentada>1</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>42200</precio>
+         <laboratorio>
+            <merlin_id>119</merlin_id>
+            <nombre>Medipharma  </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>009154</merlin_id>
+            <nombre>vit.a+vit.e                   </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000540</merlin_id>
+            <nombre>nutriente dermico             </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0040564</merlin_id>
+         <nombre>A-VITEL E</nombre>
+         <presentacion>cr.pomo x 50 g</presentacion>
+         <numero_troquel>9940564</numero_troquel>
+         <codigo_barras>7798030237925</codigo_barras>
+         <unidad_fragmentada>1</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>32200</precio>
+         <laboratorio>
+            <merlin_id>119</merlin_id>
+            <nombre>Medipharma  </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>009154</merlin_id>
+            <nombre>vit.a+vit.e                   </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000540</merlin_id>
+            <nombre>nutriente dermico             </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0033434</merlin_id>
+         <nombre>A-VITEL HH</nombre>
+         <presentacion>env.x 150 ml</presentacion>
+         <numero_troquel>9933434</numero_troquel>
+         <codigo_barras>7798030237185</codigo_barras>
+         <unidad_fragmentada>1</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>59800</precio>
+         <laboratorio>
+            <merlin_id>119</merlin_id>
+            <nombre>Medipharma  </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>000758</merlin_id>
+            <nombre>vit.a+asoc.                   </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000223</merlin_id>
+            <nombre>hidratante nutriente dermico  </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0027317</merlin_id>
+         <nombre>A-VITEL SOLAR</nombre>
+         <presentacion>Factor 15 bronc.x 120 g</presentacion>
+         <numero_troquel>9927317</numero_troquel>
+         <codigo_barras>7798030238175</codigo_barras>
+         <unidad_fragmentada>1</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>57600</precio>
+         <laboratorio>
+            <merlin_id>119</merlin_id>
+            <nombre>Medipharma  </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>010501</merlin_id>
+            <nombre>protector solar               </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000253</merlin_id>
+            <nombre>protector solar               </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0027318</merlin_id>
+         <nombre>A-VITEL SOLAR</nombre>
+         <presentacion>Factor 36 pant.x 120 g</presentacion>
+         <numero_troquel>9927318</numero_troquel>
+         <codigo_barras>7798030238182</codigo_barras>
+         <unidad_fragmentada>1</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>74800</precio>
+         <laboratorio>
+            <merlin_id>119</merlin_id>
+            <nombre>Medipharma  </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>010501</merlin_id>
+            <nombre>protector solar               </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000124</merlin_id>
+            <nombre>pantalla solar                </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0042384</merlin_id>
+         <nombre>A.H.A</nombre>
+         <presentacion>cr.x 75</presentacion>
+         <numero_troquel>9942384</numero_troquel>
+         <codigo_barras>7798127500222</codigo_barras>
+         <unidad_fragmentada>1</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>140360</precio>
+         <laboratorio>
+            <merlin_id>721</merlin_id>
+            <nombre>Sempre Giova</nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>001033</merlin_id>
+            <nombre>glicolico,ac.+asoc.           </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000820</merlin_id>
+            <nombre>antioxidante exfoliativo      </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0032410</merlin_id>
+         <nombre>ABACAVIR ELEA</nombre>
+         <presentacion>300 mg comp.rec.x 60</presentacion>
+         <numero_troquel>5094051</numero_troquel>
+         <codigo_barras>7796285050658</codigo_barras>
+         <unidad_fragmentada>60</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>1094240</precio>
+         <laboratorio>
+            <merlin_id>498</merlin_id>
+            <nombre>Elea - Phoen</nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>001329</merlin_id>
+            <nombre>abacavir                      </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000600</merlin_id>
+            <nombre>antiviral contra hiv          </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0047976</merlin_id>
+         <nombre>ABARAX</nombre>
+         <presentacion>100 mg comp.x 100</presentacion>
+         <numero_troquel>6149711</numero_troquel>
+         <codigo_barras>7796285272616</codigo_barras>
+         <unidad_fragmentada>100</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>312103</precio>
+         <laboratorio>
+            <merlin_id>498</merlin_id>
+            <nombre>Elea - Phoen</nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>010020</merlin_id>
+            <nombre>benznidazol                   </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000638</merlin_id>
+            <nombre>antichagasico                 </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0047975</merlin_id>
+         <nombre>ABARAX</nombre>
+         <presentacion>50 mg comp.x 100</presentacion>
+         <numero_troquel>6149681</numero_troquel>
+         <codigo_barras>7796285272623</codigo_barras>
+         <unidad_fragmentada>100</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>191731</precio>
+         <laboratorio>
+            <merlin_id>498</merlin_id>
+            <nombre>Elea - Phoen</nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>010020</merlin_id>
+            <nombre>benznidazol                   </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000638</merlin_id>
+            <nombre>antichagasico                 </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0027084</merlin_id>
+         <nombre>ABELCET</nombre>
+         <presentacion>100 mg f.a.x 20 ml</presentacion>
+         <numero_troquel>4809631</numero_troquel>
+         <codigo_barras>7795326006616</codigo_barras>
+         <unidad_fragmentada>1</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>2576114</precio>
+         <laboratorio>
+            <merlin_id>518</merlin_id>
+            <nombre>Teva argenti</nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>010591</merlin_id>
+            <nombre>anfotericina b complejo lipidi</nombre>
+         </droga>
+         <accion>
+            <merlin_id>000734</merlin_id>
+            <nombre>antibiotico antimicotico      </nombre>
+         </accion>
+      </producto>
+      <producto>
+         <merlin_id>0052602</merlin_id>
+         <nombre>ABERIC</nombre>
+         <presentacion>250 mg comp.x 120</presentacion>
+         <numero_troquel>6327411</numero_troquel>
+         <codigo_barras>7798241900045</codigo_barras>
+         <unidad_fragmentada>120</unidad_fragmentada>
+         <stock>0</stock>
+         <precio>26075500</precio>
+         <laboratorio>
+            <merlin_id>820</merlin_id>
+            <nombre>Ingerics    </nombre>
+         </laboratorio>
+         <rubro>
+            <merlin_id>00</merlin_id>
+            <descripcion>Medicamentos        </descripcion>
+         </rubro>
+         <droga>
+            <merlin_id>010994</merlin_id>
+            <nombre>abiraterona,acetato           </nombre>
+         </droga>
+         <accion>
+            <merlin_id>000055</merlin_id>
+            <nombre>antineoplasico                </nombre>
+         </accion>
+      </producto>
+   </productos>
+   <callback>
+      <url>https://xxxx/xxx.xx</url>
+         <metodo>POST</metodo>
+      <callback_type>XML</callback_type>
+   </callback>
+</doc_in>
