@@ -2,10 +2,12 @@
 
 namespace App\Core\DynamicTableResources;
 
+use App\Core\Entities\BaseTableResource;
+use App\Core\Interfaces\ResourceTableInterface;
 use Illuminate\Http\Request;
 use App\Entities\Product;
 
-class ProductTableResource
+class ProductTableResource extends BaseTableResource implements ResourceTableInterface
 {
     public function getResource(){
         return [
@@ -13,6 +15,9 @@ class ProductTableResource
             'page_name' => 'Productos',
             'resource' => 'Product',
             'resolver' => 'ProductResolver',
+
+
+            'permissions' => permissionsTo($this->current_form),
 
             'url' =>route('api.dynamic.table'),
             'createUrl' =>route('products.create'),
@@ -28,7 +33,7 @@ class ProductTableResource
 
             'perPage' => 10,
             'perPageLabel' => 'Productos por página',
-            'filters' => ['name','state', 'description'],
+            'filters' => ['name','state', 'description','presentation','die_number','drug'],
             'emptyTableLabel' => 'No se encontraron registros'
         ];
     }
@@ -39,37 +44,21 @@ class ProductTableResource
             ["label" => 'Nombre', "field" => 'name', ],
             ["label" => 'Nro troquel',"field" => 'die_number'],
             ["label" => 'Presentacion',"field" => 'presentation'],
+            ["label" => 'Droga',"field" => 'droga'],
             ["label" => 'Estado',"field" => 'state'],
         ]);
         $query = new Product();
-        if(isset($request->columnFilters) && count($request->columnFilters)){
-            foreach($request->columnFilters as $key =>  $filter){
-                switch ($filter){
-                    default:
-                        $query = $query->orWhere($filter, 'LIKE', '%'.$request->search_query.'%')
-                            ->whereState('1');
-                        break;
-                }
-            }
-        }
-        $sort = $request->sort;
-        if(isset($sort['type']) && isset($sort['field'])){
-            switch ($sort['field']){
-                default:
-                    $field = ($sort['field'] != '') ? $sort['field'] : null;
-                    $type = ($sort['type'] != '') ? $sort['type'] : null;
-                    if(!is_null($field) && !is_null($type)){
-                        $query = $query->orderBy($field, $type);
-                    }
 
-                    break;
-            }
-        }
+
+        $query = $this->filter($query, $request);
+        $query = $this->sort($query, $request);
 
         $data = $query->paginate($request->per_page)->appends(
             ['sort' => $request->sort]);
 
-
+        $data->each(function($product){
+            $product['droga'] = isset( $product->drug) ?  $product->drug->name : 'no tiene';
+        });
 
         return [
             'paginator' =>$data ,
@@ -79,5 +68,26 @@ class ProductTableResource
         ];
 
     }
+
+
+    public function filter($query, $request)
+    {
+        if(isset($request->columnFilters) && count($request->columnFilters)){
+            foreach($request->columnFilters as $key =>  $filter){
+                switch ($filter){
+                    case'drug':
+                        $query = $query->orWhereHas('drug', function($module)use($request){
+                            $module->where('name',  'LIKE', '%'.$request->search_query.'%');
+                        });
+                        break;
+                    default:
+                        $query = $query->orWhere($filter, 'LIKE', '%'.$request->search_query.'%');
+                    break;
+                }
+            }
+        }
+        return $query;
+    }
+
 
 }

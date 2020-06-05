@@ -39,7 +39,7 @@ class DynamicTableController extends BaseController
 
     public function resolve(Request $request){
 
-        return (new $this->resolvers[$request->resolver])->handle($request);
+        return (new $this->resolvers[$request->resolver]($request))->handle($request);
     }
 
 }

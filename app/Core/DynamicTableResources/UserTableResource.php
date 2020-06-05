@@ -1,15 +1,22 @@
 <?php
 namespace App\Core\DynamicTableResources;
+use App\Core\Entities\BaseTableResource;
+use App\Core\Interfaces\ResourceTableInterface;
+
 use App\Entities\User;
 use Illuminate\Http\Request;
 
-class UserTableResource
+
+class UserTableResource extends BaseTableResource implements ResourceTableInterface
 {
 
+
+
     public function getResource(){
+
         return [
             'page_name' => 'Usuarios panel',
-
+            'permissions' => permissionsTo($this->current_form),
             'resource' => 'User',
             'resolver' => 'UserResolver',
 
@@ -40,73 +47,14 @@ class UserTableResource
             ["label" => 'Roles',"field" => 'role_list'],
             ["label" => 'Estado',"field" => 'state'],
         ]);
+
         $query = new User();
-        if(isset($request->columnFilters) && count($request->columnFilters)){
-            foreach($request->columnFilters as $key =>  $filter){
-                switch ($filter){
-                    case'role_list':
-                        if(isCurrentSuperAdmin()){
-                            $query = $query->whereState('1')
-                                ->whereHas('roles', function($role)use($filter){ $role->where('name', 'LIKE', $filter); });
-                        }else{
-                            $query = $query->whereState('1')
-                                ->whereHas('roles', function($role)use($filter){
-                                    $role->where('name', 'LIKE', $filter)->where('name', '!=', 'Super usuario')
-                                ; });
-                        }
-
-                    break;
-                    default:
-                        if(isCurrentSuperAdmin()) {
-                            $query = $query->orWhere($filter, 'LIKE', '%' . $request->search_query . '%')
-                                ->whereState('1')
-                                ->whereHas('roles', function ($role) {
-                                    $role->where('name', '!=', 'Cliente');
-                                });
-                        }else{
-                            $query = $query->orWhere($filter, 'LIKE', '%' . $request->search_query . '%')
-                                ->whereState('1')
-                                ->whereHas('roles', function ($role) {
-                                    $role->where('name', '!=', 'Cliente')->where('name', '!=' ,'Super usuario');
-                                });
-                        }
-                    break;
-                }
-            }
-        }
-        if(isCurrentSuperAdmin()) {
-
-            $query = $query->whereHas('roles', function ($role) {
-                $role->where('name', '!=', 'Cliente');
-            });
-        }else{
-            $query = $query->whereHas('roles', function ($role) {
-                $role->where('name', '!=', 'Cliente')->where('name', '!=' ,'Super usuario');
-            });
-        }
-
-        $sort = $request->sort;
-        if(isset($sort['type']) && isset($sort['field'])){
-            switch ($sort['field']){
-                case'role': break;
-                default:
-                    $field = ($sort['field'] != '') ? $sort['field'] : null;
-                    $type = ($sort['type'] != '') ? $sort['type'] : null;
-                    if(!is_null($field) && !is_null($type)){
-                        $query = $query->orderBy($field, $type);
-                    }
-
-                break;
-            }
-        }
-
-        $data = $query->paginate($request->per_page)->appends(
-            ['sort' => $request->sort]);
-
+        $query = $this->filter($query, $request);
+        $query = $this->sort($query, $request);
+        $data = $query->forCurrentUser()->paginate($request->per_page)->appends(['sort' => $request->sort]);
         $data->each(function($user){
                 $user['role_list'] = $user->roleStringList;
         });
-
 
         return [
             'paginator' =>$data ,
@@ -114,6 +62,43 @@ class UserTableResource
             'filters'=> $request->columnFilters,
             'request' => $request->all()
         ];
+    }
 
+    public function sort($query, $request)
+    {
+        $sort = $request->sort;
+        $field = ($sort['field'] != '') ? $sort['field'] : null;
+        $type = ($sort['type'] != '') ? $sort['type'] : null;
+        if(isset($sort['type']) && isset($sort['field']) && !is_null($field) && !is_null($type))
+        {
+            switch ($sort['field']){
+                case'role_list':
+                    //do nothing
+                    break;
+                default:
+                    $query = $query->orderBy($field, $type);
+                    break;
+            }
+        }
+        return $query;
+    }
+
+    public function filter($query,$request)
+    {
+        if(isset($request->columnFilters) && count($request->columnFilters)){
+            foreach($request->columnFilters as $key =>  $filter){
+                switch ($filter){
+                    case'role_list':
+                        $query = $query->orwhereHas('roles', function($role) use($request) {
+                            $role->where('name', 'LIKE', '%'.$request->search_query.'%');
+                        });
+                        break;
+                    default:
+                        $query = $query->orWhere($filter, 'LIKE', '%'.$request->search_query.'%');
+                        break;
+                }
+            }
+        }
+        return $query;
     }
 }

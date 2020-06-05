@@ -14,9 +14,14 @@ abstract class BaseEntity extends Model
 
     public $onSoftDelete = 'toggleState';
 
-    public function scopeActives()
+    public function scopeActives($query)
     {
-        return self::where('state', '1');
+        return $query->where('state', '1');
+    }
+
+    public function scopeUnactives($query)
+    {
+        return $query->where('state', '0');
     }
 
 
@@ -24,10 +29,7 @@ abstract class BaseEntity extends Model
         return Carbon::parse($this->created_at)->format('d/m/y');
     }
 
-    public function hasSpecialty($specialty_id)
-    {
-        return $this->specialties->pluck('id')->contains($specialty_id);
-    }
+
 
 
 

@@ -40,7 +40,7 @@ return [
             'channels' => ['single'],
             'ignore_exceptions' => false,
         ],
-        'merlin_logs' => [
+        'merlin' => [
             'driver' => 'daily',
             'path' => storage_path('logs/merlin.log'),
             'level' => 'debug',

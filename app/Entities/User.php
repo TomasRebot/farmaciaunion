@@ -56,16 +56,7 @@ class User extends BaseEntity implements Authenticatable
      * @param $password
      * @return Void
      */
-//    public function setPasswordAttribute($password){
-//
-//        if (!empty($password) && Hash::needsRehash($password))
-//        {
-//            $this->attributes['password'] = Hash::make($password);
-//        }else{
-//
-//            $this->attributes['password'] = $this->$password;
-//        }
-//    }
+
 
     public function roles()
     {
@@ -104,6 +95,12 @@ class User extends BaseEntity implements Authenticatable
     {
         return $this->belongsToMany(Role::class,'user_roles'  ,'user_id')
             ->select('name');
+    }
+
+    public function scopeForCurrentUser($query){
+        return (isCurrentSuperAdmin())
+            ? $query->whereHas('roles', function($role){$role->whereNotIn('name', ['Cliente']);})
+            : $query->whereHas('roles', function ($role) { $role->whereNotIn('name' , ['Cliente', 'Super usuario']); });
     }
 
 }

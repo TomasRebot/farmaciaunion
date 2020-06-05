@@ -3,7 +3,7 @@
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header" >
                 <div class="dropdown profile-element">
-{{--                    <img alt="image" class="panel-left-nav-image" src="{{asset('img/sites/farmacia-union/left-nav-menu-header.png')}}">--}}
+{{--                    <img alt="image" class="panel-left-nav-image" src="{{GlobalConfig::favicon()}}">--}}
 
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="block m-t-xs font-bold">{{Auth::user()->name}}</span>
@@ -15,7 +15,7 @@
                     </ul>
                 </div>
                 <div class="logo-element">
-                    IN+
+                    FU
                 </div>
             </li>
             <li>
