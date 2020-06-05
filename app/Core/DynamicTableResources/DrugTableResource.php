@@ -1,18 +1,23 @@
 <?php
 namespace App\Core\DynamicTableResources;
+use App\Core\Entities\BaseTableResource;
+use App\Core\Interfaces\ResourceTableInterface;
 use App\Entities\Drug;
 
 use Illuminate\Http\Request;
 
-class DrugTableResource
+class DrugTableResource extends BaseTableResource implements ResourceTableInterface
 {
 
     public function getResource(){
+
         return [
 
             'page_name' => 'Drogas',
             'resource' => 'Drug',
             'resolver' => 'DrugResolver',
+
+            'permissions' => permissionsTo($this->current_form),
 
             'url' =>route('api.dynamic.table'),
             'createUrl' =>route('drugs.create'),
@@ -41,37 +46,15 @@ class DrugTableResource
             ["label" => 'Accion terapeutica',"field" => 'therapeutic_action'],
             ["label" => 'Estado',"field" => 'state'],
         ]);
+
+
         $query = new Drug();
-        $query = $query->with('therpaeuticActions');
-        if(isset($request->columnFilters) && count($request->columnFilters)){
-            foreach($request->columnFilters as $key =>  $filter){
-                switch ($filter){
-                    case'therapeutic_action':
-                        $query = $query->whereHas('therpaeuticActions', function($theraction)use($filter){ $theraction->where('name', 'LIKE', $filter); });
-                    break;
-                    default:
-                        $query = $query->orWhere($filter, 'LIKE', '%'.$request->search_query.'%');
-                    break;
-                }
-            }
-        }
-        $sort = $request->sort;
-        if(isset($sort['type']) && isset($sort['field'])){
-            switch ($sort['field']){
-                case'therapeutic_action': break;
-                default:
-                    $field = ($sort['field'] != '') ? $sort['field'] : null;
-                    $type = ($sort['type'] != '') ? $sort['type'] : null;
-                    if(!is_null($field) && !is_null($type)){
-                        $query = $query->orderBy($field, $type);
-                    }
 
-                break;
-            }
-        }
+        $query = $this->filter($query, $request);
 
-        $data = $query->paginate($request->per_page)->appends(
-            ['sort' => $request->sort]);
+        $query = $this->sort($query, $request);
+
+        $data = $query->paginate($request->per_page)->appends(['sort' => $request->sort]);
 
         $data->each(function($drug){
             $drug['therapeutic_action'] = $drug->therpaeuticActionsToString;
@@ -85,5 +68,24 @@ class DrugTableResource
             'request' => $request->all()
         ];
 
+    }
+
+    public function filter($query, $request)
+    {
+        if(isset($request->columnFilters) && count($request->columnFilters)){
+            foreach($request->columnFilters as $key =>  $filter){
+                switch ($filter){
+                    case'therapeutic_action':
+                        $query = $query->orWhereHas('therpaeuticActions', function($theraction)use($request){
+                            $theraction->where('name', 'LIKE','%'.$request->search_query.'%');
+                        });
+                        break;
+                    default:
+                        $query = $query->orWhere($filter, 'LIKE', '%'.$request->search_query.'%');
+                    break;
+                }
+            }
+        }
+        return $query;
     }
 }

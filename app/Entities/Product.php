@@ -52,15 +52,6 @@ class Product extends BaseEntity
         return $this->hasOne(Provider::class, 'id', 'provider_id');
     }
 
-//    public function getPriceAttribute()
-//    {
-//        $price =  Price::where('vigency_from' , '<=' , Carbon::now())
-//            ->where('vigency_to' , '>=', Carbon::now())
-//            ->where('product_id', $this->id)->first();
-//        if($price){
-//            return $price->value;
-//        }
-//    }
 
     public function drug()
     {

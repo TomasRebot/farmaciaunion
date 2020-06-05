@@ -29,6 +29,13 @@
                            data-rule="password" data-restrictions="required:true|minlength:6"
                     >
                 </div>
+
+                <div class="form-group">
+                    <label>
+                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                        Recordarme
+                    </label>
+                </div>
                 <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
                 <a href="{{route('site')}}" class="btn btn-default block full-width m-b">Volver</a>
                 <a  href="{{ route('password.request') }}"><small>Olvido su contraseña?</small></a>

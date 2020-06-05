@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 
+Route::get('/', 'HomeController@index')->name('panel');
 Route::post('/bulk-delete', 'HomeController@bulkDelete')->name('bulk-delete');
 
 Route::namespace('Admin')->group(function () {

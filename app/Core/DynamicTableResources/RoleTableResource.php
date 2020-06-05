@@ -1,15 +1,19 @@
 <?php
 namespace App\Core\DynamicTableResources;
+use App\Core\Entities\BaseTableResource;
+use App\Core\Interfaces\ResourceTableInterface;
 use App\Entities\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class RoleTableResource
+class RoleTableResource extends BaseTableResource implements ResourceTableInterface
 {
 
     public function getResource(){
+
         return [
             'page_name' => 'Roles',
-
+            'permissions' => permissionsTo($this->current_form),
             'resource' => 'Role',
             'resolver' => 'RoleResolver',
 
@@ -44,37 +48,12 @@ class RoleTableResource
         ]);
         $query = Role::forCurrentUserTableResource();
 
-        $idRoles = $query->pluck('id');
+        $query = $this->filter($query, $request)->whereIn('id', $query->pluck('id'));
 
-        if(isset($request->columnFilters) && count($request->columnFilters)){
-            foreach($request->columnFilters as $key =>  $filter){
-                switch ($filter){
-                    case'role': break;
-                    default:
-                        $query = $query->orWhere($filter, 'LIKE', '%'.$request->search_query.'%')
-                        ->whereIn('id', $idRoles);
-                    break;
-                }
-            }
-        }
-
-        $sort = $request->sort;
-        if(isset($sort['type']) && isset($sort['field'])){
-            switch ($sort['field']){
-                case'role': break;
-                default:
-                    $field = ($sort['field'] != '') ? $sort['field'] : null;
-                    $type = ($sort['type'] != '') ? $sort['type'] : null;
-                    if(!is_null($field) && !is_null($type)){
-                        $query = $query->orderBy($field, $type);
-                    }
-                break;
-            }
-        }
+        $query = $this->sort($query,$request);
 
         $data = $query->paginate($request->per_page)->appends(
             ['sort' => $request->sort]);
-
 
         return [
             'paginator' =>$data ,
