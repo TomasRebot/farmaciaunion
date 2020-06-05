@@ -3,13 +3,16 @@ $(document).ready(() => {
     const categorySelect = $('#category_select');
     const providerSelect = $('#provider_select');
     const laboratorySelect = $('#laboratory_select');
-    const description  = $('#input-description');
+    const description  = $('.description');
     const drugSelect  = $('#drug_select');
     const therapeuticActionSelect  = $('#therapeutic_action_select');
     const isEditting = ($('#id').val() !== undefined)
 
     const ajaxLoader = $('#product_ajax_select_loading');
     const productSelects = $('#product_ajax_select_container');
+
+    const createAjaxLoader = $('#create_product_ajax_select_loading');
+    const createproductSelects = $('#create_product_ajax_select_container');
     description.summernote(summernoteBaseMediumConfig);
     let params =(isEditting) ? { product: $('#id').val() } : {};
 
@@ -27,6 +30,9 @@ $(document).ready(() => {
         const data = response.data;
         productSelects.removeClass('opacity-0');
         ajaxLoader.addClass('hidden');
+
+        createproductSelects.removeClass('opacity-0');
+        createAjaxLoader.addClass('hidden');
 
 
         drugSelect.trigger({

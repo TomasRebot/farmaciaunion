@@ -119,7 +119,7 @@
                         </div>
                         <hr>
 
-                        <div class="row mt-5 hidden" id="product_ajax_select_loading">
+                        <div class="row mt-5" id="create_product_ajax_select_loading" >
                             <div class="sk-spinner sk-spinner-wave">
                                 <div class="sk-rect1"></div>
                                 <div class="sk-rect2"></div>
@@ -129,7 +129,67 @@
                             </div>
                         </div>
                         <!-- selects-->
-                        <div class="row mt-3 hidden" id="product_ajax_select_container">
+                        <div  class="opacity-0" id="create_product_ajax_select_container">
+                            <div class="row mt-3" >
+                                <div class="col-md-4">
+                                    <div class="input-group @if ($errors->has('drug_id')) has-error @endif">
+                                    <span class="input-group-addon border-0">
+                                        <label class=" control-label" for="input-name"><b>Droga</b> </label>
+                                    </span>
+                                        <select id="drug_select" class="form-control m-b" name="drug_id">
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <div class="input-group @if ($errors->has('therpeutic_action_id')) has-error @endif">
+                                    <span class="input-group-addon border-0">
+                                        <label class=" control-label" for="input-name"><b>Accion terapeutica</b> </label>
+                                    </span>
+                                        <select id="therapeutic_action_select" class="form-control m-b" name="primary_therapeutic_action_id">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="input-group @if ($errors->has('laboratory_id')) has-error @endif">
+                                        <span class="input-group-addon border-0">
+                                            <label class=" control-label" for="input-name"><b>Laboratorio</b> </label>
+                                        </span>
+                                        <select id="laboratory_select" class="form-control m-b" name="laboratory_id">
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="input-group @if ($errors->has('brand')) has-error @endif">
+                                    <span class="input-group-addon border-0">
+                                        <label class=" control-label" for="brands_select"><b>Marca</b> </label>
+                                    </span>
+                                        <select id="brands_select" class="form-control m-b" name="brand_id">
+
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="input-group @if ($errors->has('category_id')) has-error @endif">
+                                    <span class="input-group-addon border-0">
+                                        <label class=" control-label" for="category_select"><b>Categoría</b> </label>
+                                    </span>
+                                        <select id="category_select" class="form-control m-b" name="category_id"></select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="input-group @if ($errors->has('provider_id')) has-error @endif">
+                                    <span class="input-group-addon border-0">
+                                        <label class=" control-label" for="provider_select"><b>Proveedor</b> </label>
+                                    </span>
+                                        <select id="provider_select" class="form-control m-b" name="provider_id"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <hr>
                         <div class="row mt-5">
                             <div class="col-md-12">
@@ -138,7 +198,7 @@
                                     <div class="col-sm-8">
                                         <textarea id="description"
                                               data-rule="description" data-restrictions="required"
-                                              type="text" class="form-control"name="description">
+                                              type="text" class="form-control description"name="description">
                                         </textarea>
                                     </div>
                                 </div>
