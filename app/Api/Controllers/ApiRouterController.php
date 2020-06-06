@@ -43,10 +43,10 @@ class ApiRouterController extends BaseController
         if(isset($request->product)){
             $product = Product::find($request->product);
             $data['product'] = [
-              'drug' => $product->drug->id,
-              'therapeutic_action' => $product->primaryTherapeuticAction->id,
-              'laboratory' => $product->laboratory->id,
-              'category' => $product->category->id,
+              'drug' => isset($product->drug) ? $product->drug->id : '',
+              'therapeutic_action' =>isset($product->primaryTherapeuticAction) ? $product->primaryTherapeuticAction->id : '',
+              'laboratory' => isset($product->laboratory) ? $product->laboratory->id : '',
+              'category' =>isset($product->category) ? $product->category->id : '',
             ];
         }
         return response()->json($data);

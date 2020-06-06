@@ -40,13 +40,13 @@ class UsersController extends BaseController implements ControllerContract
         try{
             $user = new User();
             $user->fill($request->all());
-            $user->roles()->sync($request->roles);
             $new_password = $request->password;
 
             if(isset($new_password) && $new_password !== ''){
                 $user->password = bcrypt($request->password);
             }
             $user->save();
+            $user->roles()->sync($request->roles);
             DB::commit();
             $request->session()->flash('flash_message', 'El usuario se ha creado exitosamente!');
             return redirect()->route('users.index');
@@ -65,12 +65,10 @@ class UsersController extends BaseController implements ControllerContract
             $stmt = $request->password == '' ? $request->except('password') : $request->all();
 
             $user->fill($stmt);
-            $user->roles()->sync($request->roles);
             $new_password = $request->password;
             if(isset($new_password) && $new_password !== ''){
                 $user->password = bcrypt($request->password);
             }
-
             $user->save();
             $user->roles()->sync($request->roles);
 

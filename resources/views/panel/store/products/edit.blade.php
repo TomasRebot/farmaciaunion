@@ -31,7 +31,7 @@
                                     <span class="input-group-addon border-0">
                                         <label class="control-label" for="input-name"><b>Código Merlin</b></label>
                                     </span>
-                                    <input id="input-id_merlin" type="text" class="form-control" value="{{$product->merlin_id ?? 'Solo se vende por web'}}" disabled>
+                                    <input id="id_merlin" type="text" class="form-control" value="{{$product->merlin_id ?? 'Solo se vende por web'}}" disabled>
                                 </div>
                             </div>
                             <div class="col-md-4 mt-3">
@@ -39,7 +39,7 @@
                                     <span class="input-group-addon border-0">
                                         <label class=" control-label" for="input-name"><b>Stock</b></label>
                                     </span>
-                                    <input id="input-name" type="number" class="form-control"
+                                    <input id="name" type="number" class="form-control"
                                            value="{{$product->stock}}"
                                            disabled
                                            name="stock">
@@ -55,7 +55,7 @@
                                     <span class="input-group-addon border-0">
                                         <label class="control-label" for="input-name"><b>Código de barras</b></label>
                                     </span>
-                                    <input id="input-name" type="text" class="form-control"
+                                    <input id="name" type="text" class="form-control"
                                            value="{{$product->bar_code}}"
                                            required
                                            name="name">
@@ -66,7 +66,7 @@
                                     <span class="input-group-addon border-0">
                                         <label class="control-label" for="input-name"><b>Nombre</b></label>
                                     </span>
-                                    <input id="input-name" type="text" class="form-control"
+                                    <input id="name" type="text" class="form-control"
                                            value="{{$product->name}}"
                                            required
                                            name="name">
@@ -77,7 +77,7 @@
                                     <span class="input-group-addon border-0">
                                         <label class=" control-label" for="input-name"><b>Presentacion</b></label>
                                     </span>
-                                    <input id="input-name" type="text" class="form-control"
+                                    <input id="presentation" type="text" class="form-control"
                                            value="{{$product->presentation}}"
                                            required
                                            name="presentation">
@@ -88,7 +88,7 @@
                                     <span class="input-group-addon border-0">
                                         <label class=" control-label" for="input-name"><b>Cantidad fragmentado</b></label>
                                     </span>
-                                    <input id="input-name" type="text" class="form-control"
+                                    <input id="fragment_unit" type="text" class="form-control"
                                            value="{{$product->fragment_unit}}"
                                            required
                                            name="fragment_unit">
@@ -99,7 +99,7 @@
                                     <span class="input-group-addon border-0">
                                         <label class="control-label" for="input-name"><b>Número de troquel</b></label>
                                     </span>
-                                    <input id="input-die_number" type="text" class="form-control"
+                                    <input id="die_number" type="text" class="form-control"
                                            value="{{intval($product->die_number)}}"
                                            name="die_number">
                                 </div>
@@ -126,7 +126,7 @@
                             </div>
 
                             <!-- selects-->
-                            <div id="product_ajax_select_container" class="opacity-0">
+                            <div class="opacity-0" id="product_ajax_select_container">
                                 <div class="row mt-3" >
                                     <div class="col-md-4">
                                         <div class="input-group @if ($errors->has('drug_id')) has-error @endif">
@@ -193,10 +193,10 @@
                                     <div class="form-group row @if ($errors->has('description')) has-error @endif">
                                         <label class="control-label col-sm-2 mb-3" for="input-name"><b>Descripcion</b></label>
                                         <div class="col-sm-8">
-                                        <textarea id="input-description"
-                                                  type="text" class="form-control"name="description">
-                                        {{$product->description }}
-                                    </textarea>
+                                        <textarea id="description"
+                                                  type="text" class="form-control description"name="description">
+                                            {{$product->description }}
+                                        </textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -236,3 +236,4 @@
 @section('custom-scripts')
     <script src="{{asset('js/pages/products.js')}}"></script>
 @endsection
+
