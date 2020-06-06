@@ -17,10 +17,10 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('description');
-            $table->string('bar_code');
+            $table->longText('description');
+            $table->text('bar_code');
             $table->string('merlin_id')->nullable()->default(null)->index();
-            $table->string('die_number')->nullable()->default(null);
+            $table->text('die_number')->nullable()->default(null);
             $table->string('presentation')->nullable()->default(null);
             $table->string('fragment_unit')->nullable()->default(null);
             $table->float('price')->nullable()->default(null);
