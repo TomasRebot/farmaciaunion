@@ -142,7 +142,7 @@
                             </div>
                         </div>
                         <div class="form-group row  @error('instagram_link') has-error @enderror">
-                            <label class="col-sm-2 control-label" for="instagram_link">Link facebook</label>
+                            <label class="col-sm-2 control-label" for="instagram_link">Link instagram</label>
                             <div class="col-sm-8">
                                 <input id="instagram_link" type="text" class="form-control"
                                        value="{{$globalConfig->instagram_link}}"

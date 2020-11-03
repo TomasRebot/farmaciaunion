@@ -19,6 +19,7 @@ class CreateTablePermissions extends Migration
             $table->string('action');
             $table->string('description');
             $table->string('icon');
+            $table->enum('state', [1,0])->default(1);
             $table->timestamps();
         });
     }

@@ -25,11 +25,12 @@ Route::namespace('Pharmacy')->group(function () {
     Route::resource('drugs', 'DrugController');
     Route::resource('therapeutic-actions', 'TherapeuticActionController');
     Route::resource('laboratories', 'LaboratoryController');
+    Route::resource('products', 'ProductController');
+    Route::resource('providers', 'ProviderController');
 });
 
 Route::namespace('Store')->group(function () {
-    Route::resource('products', 'ProductController');
     Route::resource('categories', 'CategoryController');
     Route::resource('brands', 'BrandController');
-    Route::resource('providers', 'ProviderController');
+
 });

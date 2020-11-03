@@ -62,8 +62,5 @@ class UserTableSeeder extends Seeder
                 'role_id' => $roleEncargadoMedico,
             ]);
         }
-
-
-
     }
 }

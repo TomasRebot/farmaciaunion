@@ -18,7 +18,6 @@ class MerlinInterfaceController extends BaseController
 
     public function updateProduct(Request $request)
     {
-
         $header = $request->header()['token'][0];
 
         if(!$header || $header === '' )  {

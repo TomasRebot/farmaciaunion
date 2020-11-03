@@ -4,5 +4,4 @@
     const drugsGetURL = "{{route('api.get.drugs')}}"
     const therapeuticActionGetURL = "{{route('api.get.therapeutic.actions')}}"
     const productSuportDataUrl = "{{route('api.get.product.support.data')}}"
-
 </script>

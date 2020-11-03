@@ -61,19 +61,27 @@ class ClientController extends  BaseController implements ControllerContract
     {
         DB::beginTransaction();
         try{
+            $client = new Client();
+            $client->fill($request->all());
+            $new_password = $request->password;
 
-            $client = Client::create($request->all());
-            $client->roles()->sync(Role::where('name', 'Cliente')->first()->id);
+            if(isset($new_password) && $new_password !== ''){
+                $client->password = bcrypt($request->password);
+            }
             $client->save();
+            $client->roles()->sync(Role::where('name', 'Cliente')->first()->id);
             DB::commit();
-            $request->session()->flash('flash_message', 'El cliente se ha creado exitosamente!');
-            return redirect()->route('client.index');
+            $request->session()->flash('flash_message', 'El usuario se ha creado exitosamente!');
+            return redirect()->route('users.index');
         }catch (\Exception $e){
             DB::rollBack();
-            $request->session()->flash('flash_error', 'El cliente no se pudo crear!');
-            return redirect()->route('clients.index');
+            dd($e->getMessage());
+            $request->session()->flash('flash_error', 'El usuario no se pudo crear!');
+            return redirect()->route('users.index')->withErrors();
         }
+
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -95,22 +103,25 @@ class ClientController extends  BaseController implements ControllerContract
      */
     public function update(Request $request, Client $client)
     {
-
         DB::beginTransaction();
         try{
             $stmt = $request->password == '' ? $request->except('password') : $request->all();
-            $client->update($stmt);
+
+            $client->fill($stmt);
+            $new_password = $request->password;
+            if(isset($new_password) && $new_password !== ''){
+                $client->password = bcrypt($request->password);
+            }
             $client->save();
+
             DB::commit();
             $request->session()->flash('flash_message', 'El usuario se ha actualizado exitosamente!');
-            return redirect()->route('client.index');
+            return redirect()->route('users.index');
 
         }catch (\Exception $e){
             DB::rollBack();
-
             $request->session()->flash('flash_error', $e->getMessage());
-            return redirect()->route('clients.index');
+            return redirect()->route('users.index');
         }
-
     }
 }

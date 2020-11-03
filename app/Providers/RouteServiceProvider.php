@@ -90,7 +90,7 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapCoreRoutes()
     {
-        Route::middleware(['web','auth', 'checkPermissions'])
+        Route::middleware(['web', 'checkPermissions'])
             ->prefix('core')
             ->namespace('App\Core\Controllers')
             ->group(base_path('routes/core.php'));
@@ -98,7 +98,7 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapPanelRoutes()
     {
-        Route::middleware(['web','auth', 'checkPermissions'])
+        Route::middleware(['web','checkPermissions'])
             ->prefix('panel')
             ->namespace('App\Http\Controllers\Panel')
             ->group(base_path('routes/panel.php'));

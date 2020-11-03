@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Panel\Store;
+namespace App\Http\Controllers\Panel\Pharmacy;
 use App\Core\Controllers\BaseController;
 use App\Core\DynamicTableResources\DrugTableResource;
 use App\Core\DynamicTableResources\ProviderTableResource;
@@ -32,7 +32,7 @@ class ProviderController extends BaseController implements ControllerContract
     public function create()
     {
 
-        return view('panel.store.providers.create');
+        return view('panel.pharmacy.providers.create');
     }
 
     /**
@@ -64,7 +64,7 @@ class ProviderController extends BaseController implements ControllerContract
      */
     public function edit(Provider $provider)
     {
-        return view('panel.store.providers.edit', compact('provider'));
+        return view('panel.pharmacy.providers.edit', compact('provider'));
     }
 
     /**

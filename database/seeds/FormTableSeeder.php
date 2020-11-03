@@ -106,6 +106,22 @@ class FormTableSeeder extends Seeder
                 'icon' =>'',
                 'state' => '1',
             ],
+            [
+                'module_id' => 3,
+                'name' => 'Proveedores',
+                'key' => 'providersForm',
+                'target' => 'panel/providers',
+                'icon' =>'',
+                'state' => '1'
+            ],
+            [
+                'module_id' => 3,
+                'name' => 'Productos',
+                'key' => 'productForm',
+                'target' => 'panel/products',
+                'icon' =>'',
+                'state' => '1',
+            ],
         ];
         $store_module_forms = [
             [
@@ -124,22 +140,7 @@ class FormTableSeeder extends Seeder
                 'icon' =>'',
                 'state' => '1',
             ],
-            [
-                'module_id' => 4,
-                'name' => 'Proveedores',
-                'key' => 'providersForm',
-                'target' => 'panel/providers',
-                'icon' =>'',
-                'state' => '1'
-            ],
-            [
-                'module_id' => 4,
-                'name' => 'Productos',
-                'key' => 'productForm',
-                'target' => 'panel/products',
-                'icon' =>'',
-                'state' => '1',
-            ],
+
         ];
 
         DB::table('forms')->insert(array_merge(
